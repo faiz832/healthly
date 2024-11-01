@@ -1,7 +1,7 @@
 <!-- Footer -->
 <footer class="bg-primary mt-[300px]">
     <div class="mx-auto w-full max-w-[1280px]">
-        <div class="relative p-4 py-6 lg:py-8 lg:pt-[224px]">
+        <div class="relative p-4 py-6 pt-[224px]">
             <div class="absolute left-0 -top-40 w-full px-8 lg:px-16 lg:py-8 bg-primaryDark rounded-3xl h-[320px]">
                 <div class="relative flex h-full items-center">
                     <div class="text-white flex flex-col max-w-4xl">
@@ -22,9 +22,9 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <!-- Logo and Description -->
-                <div class="mb-6 md:mb-0">
+                <div class="">
                     <div class="flex items-center gap-2">
                         <img src="{{ asset('assets/icons/healthly-light.png') }}" alt="" class="w-10 h-10">
                         <a href="{{ url('/') }}" class="text-3xl font-semibold mr-4 text-white">Healthly</a>
@@ -32,7 +32,7 @@
                     <p class="mt-8 text-xl text-white font-light max-w-xl">Jl. Kyai Moch. Syafei Gg 1 No.2450,
                         RT.04/RW.08,
                         Kebondalem, Purwokerto Lor, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53114</p>
-                    <div class="flex justify-between mt-12 w-[80px] md:w-1/4">
+                    <div class="flex gap-4 mt-12">
                         <!-- Social Media Icons -->
                         <a href="#"
                             class="group relative text-primary hover:text-primary transition-all duration-200 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] p-2 rounded-full bg-white">

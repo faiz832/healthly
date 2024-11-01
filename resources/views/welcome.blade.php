@@ -406,7 +406,7 @@
 
     <!-- Up Button -->
     <div id="scrollToTopBtn" onclick="scrollToTop()"
-        class="fixed bottom-7 right-7 cursor-pointer opacity-0 transform translate-y-10 transition-all duration-300 rounded-lg p-4 bg-primaryDark text-white shadow-lg hover:-translate-y-2">
+        class="z-50 fixed bottom-7 right-7 cursor-pointer opacity-0 transform translate-y-10 transition-all duration-300 rounded-lg p-4 bg-primaryDark text-white shadow-lg hover:-translate-y-2">
         <!-- SVG Icon for Up Arrow -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="w-6 h-6">
