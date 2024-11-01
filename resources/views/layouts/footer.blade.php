@@ -1,8 +1,8 @@
 <!-- Footer -->
-<footer class="bg-primary mt-[240px]">
+<footer class="bg-primary mt-[300px]">
     <div class="mx-auto w-full max-w-[1280px]">
         <div class="relative p-4 py-6 lg:py-8 lg:pt-[224px]">
-            <div class="absolute left-0 -top-40 w-full px-16 py-8 bg-primaryDark rounded-3xl h-[320px]">
+            <div class="absolute left-0 -top-40 w-full px-8 lg:px-16 lg:py-8 bg-primaryDark rounded-3xl h-[320px]">
                 <div class="relative flex h-full items-center">
                     <div class="text-white flex flex-col max-w-4xl">
                         <h1 class="text-4xl font-bold">Subscribe to Get More Benefits</h1>
@@ -11,13 +11,13 @@
                         </p>
                         <div class="flex items-center mt-12">
                             <input type="email" placeholder="youremail123@gmail.com"
-                                class="h-14 w-[440px] p-4 focus:outline-none text-gray-700 border-none" />
-                            <button class="h-14 w-[188px] bg-primary text-white font-semibold px-4 py-2">
+                                class="h-14 w-max lg:w-[440px] p-4 focus:outline-none text-gray-700 border-none" />
+                            <button class="h-14 w-max lg:w-[188px] bg-primary text-white font-semibold px-4 py-2">
                                 SUBSCRIBE
                             </button>
                         </div>
                     </div>
-                    <div class="absolute bottom-0 right-0">
+                    <div class="absolute hidden lg:block bottom-0 right-0">
                         <img src="{{ asset('assets/images/avatar-2.png') }}" alt="" class="w-[378px] h-[418px]">
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <img src="{{ asset('assets/icons/healthly-light.png') }}" alt="" class="w-10 h-10">
                         <a href="{{ url('/') }}" class="text-3xl font-semibold mr-4 text-white">Healthly</a>
                     </div>
-                    <p class="mt-8 text-2xl text-white font-light max-w-xl">Jl. Kyai Moch. Syafei Gg 1 No.2450,
+                    <p class="mt-8 text-xl text-white font-light max-w-xl">Jl. Kyai Moch. Syafei Gg 1 No.2450,
                         RT.04/RW.08,
                         Kebondalem, Purwokerto Lor, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53114</p>
                     <div class="flex justify-between mt-12 w-[80px] md:w-1/4">

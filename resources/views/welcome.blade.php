@@ -36,7 +36,7 @@
             left: 50%;
             transform: translateX(-50%);
             width: 50%;
-            background-image: linear-gradient(83.21deg, #0396A6 0%, #0B698B 100%);
+            background-image: linear-gradient(83.21deg, #0396a69c 0%, #0B698B 100%);
             --webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
             mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
         }
@@ -64,7 +64,7 @@
         <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
             <div class="flex flex-col items-center my-24 gap-12">
                 <h1
-                    class="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
+                    class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
                     Healthly with AI Assistant</h1>
                 <p class="text-xl text-gray-600 max-w-4xl text-center">Through video consultations, patients can receive
                     expert medical
@@ -118,7 +118,7 @@
     </div>
 
     <!-- Features Section -->
-    <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+    {{-- <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <div class="my-32">
             <div class="flex flex-col lg:flex-row justify-center items-center gap-24">
                 <!-- Left Content Section -->
@@ -191,10 +191,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Features Section -->
-    <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+    {{-- <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <div class="my-32">
             <div class="flex flex-col lg:flex-row items-center justify-between">
                 <!-- Left Content Section -->
@@ -234,14 +234,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Testimonials Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <h1 class="text-5xl font-bold text-center">What They Say</h1>
-        <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-24 gap-8">
-            <div class="flex flex-col gap-8">
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
+        <div class="relative flex flex-col flex-wrap mt-24 gap-8">
+            <div class="w-full max-w-screen-[1280px] columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8">
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
                         <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
                             class="w-10 h-10 rounded-full object-cover object-center">
@@ -254,65 +254,7 @@
                         space in
                         my </p>
                 </div>
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">We can’t imagine a product design process without Mobbin. The
-                        quality, clarity and precision it provides make it just as valuable as it is intuitive.</p>
-                </div>
-            </div>
-            <div class="flex flex-col gap-8">
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">Mobbin is a game-changer for designers looking to step up
-                        their
-                        understanding of UX and UI design patterns. It’s so massive, meticulously organized, has deep
-                        user
-                        flows and even a figma plugin! It’s indispensable in the modern designer’s toolbox.</p>
-                </div>
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
-                        space in my photo galleries filled with random screenshots. I love how easy it is to search for
-                        different patterns and copy and paste flows into Figma. It is a wonderful design tool you cannot
-                        live without!</p>
-                </div>
-            </div>
-            <div class="flex flex-col gap-8">
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">Mobbin is one of my favorite resources for product design and
-                        ui
-                        inspo. I love having access to a ton of “real world examples” to see how different apps </p>
-                </div>
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
                         <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
                             class="w-10 h-10 rounded-full object-cover object-center">
@@ -325,9 +267,7 @@
                         that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
                         the team for doing God’s work.</p>
                 </div>
-            </div>
-            <div class="flex flex-col gap-8">
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
                         <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
                             class="w-10 h-10 rounded-full object-cover object-center">
@@ -336,13 +276,115 @@
                             <p class="text-gray-400">@staking</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">Mobbin is a game-changer for designers looking to step up
-                        their
-                        understanding of UX and UI design patterns. It’s so massive, meticulously organized, has deep
-                        user
-                        flows and even a figma plugin! It’s indispensable in the modern designer’s toolbox.</p>
+                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
+                        space in
+                        my </p>
                 </div>
-                <div class="p-5 border border-gray-300 rounded-3xl h-fit">
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
+                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
+                        the team for doing God’s work.</p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
+                        space in
+                        my </p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
+                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
+                        the team for doing God’s work.</p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
+                        space in
+                        my </p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
+                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
+                        the team for doing God’s work.</p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
+                        space in
+                        my </p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
+                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
+                        the team for doing God’s work.</p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
+                    <div class="flex gap-4 items-center">
+                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <div class="">
+                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
+                            <p class="text-gray-400">@staking</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
+                        space in
+                        my </p>
+                </div>
+                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
                         <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
                             class="w-10 h-10 rounded-full object-cover object-center">

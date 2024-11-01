@@ -123,9 +123,9 @@
                                         <a href="{{ route('profile.edit') }}"
                                             class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
                                             role="menuitem">Profile</a>
-                                        <a href="{{ route('settings.edit') }}"
+                                        {{-- <a href="{{ route('settings.edit') }}"
                                             class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 hover:text-gray-900"
-                                            role="menuitem">Settings</a>
+                                            role="menuitem">Settings</a> --}}
                                         <form method="POST" action="{{ route('logout') }}" role="none">
                                             @csrf
                                             <button type="submit"
