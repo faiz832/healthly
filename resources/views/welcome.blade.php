@@ -117,16 +117,12 @@
                 <h1
                     class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
                     Healthly with AI Assistant</h1>
-                <p class="text-xl text-gray-600 max-w-4xl text-center">Through video consultations, patients can receive
-                    expert medical
-                    advice,
-                    diagnosis, and
-                    treatment
-                    recommendations without the need </p>
+                <p class="text-xl text-gray-600 max-w-4xl text-center">Mau coba gaya hidup sehat yang gak ribet? Yuk,
+                    biar AI Assistant bantu kamu hitung nutrisi makanan dengan mudah!</p>
                 <div class="">
                     <a href="{{ route('food.scan') }}"
-                        class="flex justify-center items-center h-12 px-6 bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">Get
-                        Started</a>
+                        class="flex justify-center items-center h-12 px-6 bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">Mulai
+                        Sekarang</a>
                 </div>
             </div>
         </section>
@@ -162,6 +158,58 @@
             </div>
         </section>
     </div>
+
+    <!--Nutrisi Section -->
+    <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+        <div class="mt-32">
+            <div class="flex flex-col justify-center items-center gap-8">
+                <h1 class="text-5xl font-bold text-center">Capai Nutrisi Seimbang</h1>
+                <p class="text-lg text-gray-600 text-center max-w-xl">Yuk, temukan ragam nutrisi yang pas buat
+                    kamu!
+                    Kami bantu
+                    hitung kebutuhan nutrisimu biar nggak ada yang
+                    kurang</p>
+            </div>
+            <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
+                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                        class="w-16 h-16 rounded-full object-cover object-center">
+                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
+                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
+                </div>
+                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
+                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                        class="w-16 h-16 rounded-full object-cover object-center">
+                    <h1 class="text-xl font-bold">Protein Berkualitas</h1>
+                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
+                </div>
+                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
+                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                        class="w-16 h-16 rounded-full object-cover object-center">
+                    <h1 class="text-xl font-bold">Lemak Sehat</h1>
+                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
+                </div>
+                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
+                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                        class="w-16 h-16 rounded-full object-cover object-center">
+                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
+                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
+                </div>
+                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
+                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                        class="w-16 h-16 rounded-full object-cover object-center">
+                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
+                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
+                </div>
+                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
+                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                        class="w-16 h-16 rounded-full object-cover object-center">
+                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
+                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Features 1 Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
