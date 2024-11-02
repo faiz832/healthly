@@ -3,7 +3,7 @@
     <div class="mx-auto w-full max-w-[1280px]">
         <div class="relative p-4 py-6 pt-[224px]">
             <div class="absolute left-0 -top-40 w-full px-8 lg:px-16 lg:py-8 bg-primaryDark rounded-3xl h-[320px]">
-                <div class="relative flex h-full items-center">
+                <div class="flex h-full items-center">
                     <div class="text-white flex flex-col max-w-4xl">
                         <h1 class="text-4xl font-bold">Subscribe to Get More Benefits</h1>
                         <p class="text-xl mt-6">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
@@ -16,9 +16,6 @@
                                 SUBSCRIBE
                             </button>
                         </div>
-                    </div>
-                    <div class="absolute hidden lg:block bottom-0 right-0">
-                        <img src="{{ asset('assets/images/avatar-2.png') }}" alt="" class="w-[378px] h-[418px]">
                     </div>
                 </div>
             </div>

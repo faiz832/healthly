@@ -124,7 +124,7 @@
                     treatment
                     recommendations without the need </p>
                 <div class="">
-                    <a href="{{ url('/upload') }}"
+                    <a href="{{ route('food.scan') }}"
                         class="flex justify-center items-center h-12 px-6 bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">Get
                         Started</a>
                 </div>
@@ -177,7 +177,7 @@
                         Through Video Consultations, Patients Can Receive Expert Medical Advice, Diagnosis, And
                         Treatment Recommendations Without The Need
                     </p>
-                    <a href="{{ url('/upload') }}"
+                    <a href="{{ route('food.scan') }}"
                         class="flex justify-center items-center h-12 px-6 w-max bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">
                         Try Now
                     </a>
