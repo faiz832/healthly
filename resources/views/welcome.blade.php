@@ -41,6 +41,53 @@
             mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
         }
 
+        /* Swing 1: Berlawanan arah jarum jam */
+        @keyframes swing1 {
+            0% {
+                transform: rotate(90deg) translateX(5px) rotate(-90deg);
+            }
+
+            100% {
+                transform: rotate(-270deg) translateX(5px) rotate(270deg);
+            }
+        }
+
+        /* Swing 2: Searah jarum jam */
+        @keyframes swing2 {
+            0% {
+                transform: rotate(90deg) translateX(5px) rotate(-90deg);
+            }
+
+            100% {
+                transform: rotate(450deg) translateX(5px) rotate(-450deg);
+            }
+        }
+
+        /* Swing 3: Lintasan miring (diagonal) */
+        @keyframes swing3 {
+            0% {
+                transform: rotate(45deg) translateX(5px) rotate(-45deg);
+            }
+
+            100% {
+                transform: rotate(405deg) translateX(5px) rotate(-405deg);
+            }
+        }
+
+
+        .swing1-animation {
+            animation: swing1 3s linear infinite;
+        }
+
+        .swing2-animation {
+            animation: swing2 3s linear infinite;
+        }
+
+        .swing3-animation {
+            animation: swing3 3s linear infinite;
+        }
+
+
         .tooltip::before {
             content: "";
             position: absolute;
@@ -112,7 +159,7 @@
         </section>
     </div>
 
-    <!-- Features Section -->
+    <!-- Features 1 Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <div class="my-32">
             <div class="flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-0 xl:gap-20">
@@ -136,45 +183,45 @@
                 <div class="relative hidden md:block">
                     <div class="flex gap-8 items-center mx-32 lg:mx-16 xl:mx-20">
                         <div class="w-1/2">
-                            <!-- Top Image -->
+                            <!-- Top left Image -->
                             <div class="relative">
                                 <div class="bg-white rounded-3xl drop-shadow-3xl overflow-hidden lg:h-64 xl:h-80">
-                                    <img src="{{ asset('assets/images/meal-1.jpg') }}" alt="Berat Ideal"
+                                    <img src="{{ asset('assets/images/meal-1.jpg') }}" alt=""
                                         class="w-full h-full object-cover object-center">
                                 </div>
                                 <div
-                                    class="absolute top-8 -left-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold drop-shadow-3xl">
+                                    class="absolute top-8 -left-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold drop-shadow-3xl swing1-animation">
                                     Berat Ideal
                                 </div>
                             </div>
 
-                            <!-- Top Right Image -->
+                            <!-- Bottom left Image -->
                             <div class="relative">
                                 <div class="bg-white rounded-3xl drop-shadow-3xl mt-8 overflow-hidden lg:h-64 xl:h-80">
-                                    <img src="{{ asset('assets/images/meal-2.jpg') }}" alt="Pola Makan Sehat"
+                                    <img src="{{ asset('assets/images/meal-2.jpg') }}" alt=""
                                         class="w-full h-full object-cover object-center">
                                 </div>
                                 <div
-                                    class="absolute bottom-8 -right-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold shadow-xl">
+                                    class="absolute bottom-8 -right-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold shadow-xl swing2-animation">
                                     Nutrisi Optimal
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Bottom Image -->
+                        <!-- Right Image -->
                         <div class="w-1/2">
                             <div class="relative">
                                 <div class="bg-white rounded-3xl drop-shadow-3xl overflow-hidden lg:h-80 xl:h-[400px]">
-                                    <img src="{{ asset('assets/images/meal-3.jpg') }}" alt="Nutrisi Optimal"
+                                    <img src="{{ asset('assets/images/meal-3.jpg') }}" alt="Image by freepick"
                                         class="w-full h-full object-cover object-left">
                                 </div>
                                 <div
-                                    class="absolute bottom-32 -right-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold drop-shadow-3xl">
+                                    class="absolute top-12 -right-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold drop-shadow-3xl swing3-animation">
                                     Makan Sehat
                                 </div>
                                 <!-- Blue Circle Arrow -->
                                 <div
-                                    class="absolute -bottom-8 xl:-bottom-12 left-24 bg-primaryDark p-2 xl:p-4 rounded-full flex items-center justify-center shadow-xl">
+                                    class="absolute -bottom-8 xl:-bottom-10 left-32 lg:left-20 xl:left-32 bg-primaryDark p-2 xl:p-4 rounded-full flex items-center justify-center shadow-xl swing1-animation">
                                     <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
                                         class="mt-1 ml-1" xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -190,32 +237,34 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features 2 Section -->
     {{-- <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-        <div class="my-32">
-            <div class="flex flex-col lg:flex-row items-center justify-between">
+        <div class="mb-32 md:my-32">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-0 xl:gap-20">
                 <!-- Left Content Section -->
-                <div class="ml-0 lg:ml-24 max-w-xl">
-                    <div class="relative flex items-center bg-primaryDark rounded-3xl">
-                        <img src="{{ asset('assets/images/avatar-1.png') }}" alt=""
-                            class="-mt-24 mb-12 h-[488px] w-[392px]">
-                        <div
-                            class="absolute top-34 -left-24 bg-white px-8 py-4 rounded-full text-lg border font-bold shadow-xl">
-                            Makan Teratur
-                        </div>
-                        <div
-                            class="absolute bottom-24 -right-20 bg-white px-8 py-4 rounded-full text-sm border font-bold shadow-xl">
-                            Nutrisi Optimal
-                        </div>
-                        <div
-                            class="absolute top-8 -right-24 bg-white px-8 py-4 rounded-full text-sm border font-bold shadow-xl">
-                            Kesehatan Terjaga
+                <div class="hidden md:block">
+                    <div class="ml-0 lg:mx-16 xl:mx-24 max-w-xl">
+                        <div class="relative flex items-center bg-primaryDark rounded-3xl drop-shadow-3xl">
+                            <img src="{{ asset('assets/images/avatar-1.png') }}" alt=""
+                                class="-mt-24 mb-12 w-full h-full max-h-[476px]">
+                            <div
+                                class="absolute top-34 -left-24 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-lg border font-bold shadow-xl">
+                                Makan Teratur
+                            </div>
+                            <div
+                                class="absolute bottom-24 -right-20 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold shadow-xl">
+                                Nutrisi Optimal
+                            </div>
+                            <div
+                                class="absolute top-8 -right-24 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold shadow-xl">
+                                Kesehatan Terjaga
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Image Grid Section -->
-                <div class="max-w-2xl">
+                <div class="max-w-xl xl:max-w-2xl">
                     <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
                         Healthcare with AI<br>
                         Connects Doctors

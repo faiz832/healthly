@@ -140,7 +140,7 @@
                             </div>
                         @else
                             <a href="{{ route('login') }}"
-                                class="rounded-full md:rounded-none bg-primaryDark md:bg-white hover:bg-primaryDark p-2 md:py-2 md:px-4 font-semibold text-primaryDark hover:text-white text-center transition duration-300 ease-in-out">
+                                class="rounded-full md:rounded-none bg-primaryDark md:bg-[#f2f2f2] hover:bg-primaryDark p-2 md:py-2 md:px-4 font-semibold text-primaryDark hover:text-white text-center transition duration-300 ease-in-out">
                                 <span class="hidden md:inline">Log In</span>
                                 <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 md:hidden"
                                     xmlns="http://www.w3.org/2000/svg">
