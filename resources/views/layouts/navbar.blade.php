@@ -55,11 +55,12 @@
 
             <!-- Desktop Navigation (hidden on md and smaller screens) -->
             <div class="hidden md:flex gap-4 lg:gap-[60px]">
-                <a href="#demo" class="font-semibold hover:text-primary transition duration-300 ease-in-out">How it
+                <a href="{{ url('/#demo') }}"
+                    class="font-semibold hover:text-primary transition duration-300 ease-in-out">How it
                     works</a>
-                <a href="#"
+                <a href="{{ url('/#') }}"
                     class="font-semibold hover:text-primary transition duration-300 ease-in-out">Medicals</a>
-                <a href="#partners"
+                <a href="{{ url('/#partners') }}"
                     class="font-semibold hover:text-primary transition duration-300 ease-in-out">Partners</a>
             </div>
 
@@ -74,7 +75,7 @@
                                 <button @click="open = !open" @click.away="open = false" class="flex items-center">
                                     <div class="avatar">
                                         @php
-                                            $avatarUrl = asset('assets/images/profile1.png'); // Default avatar URL
+                                            $avatarUrl = asset('assets/images/default-avatar.jpg'); // Default avatar URL
 
                                             if (Auth::user()->avatar) {
                                                 if (Str::startsWith(Auth::user()->avatar, 'https://')) {

@@ -34,7 +34,7 @@
                         Kebondalem, Purwokerto Lor, Kec. Purwokerto Tim., Kabupaten Banyumas, Jawa Tengah 53114</p>
                     <div class="flex gap-4 mt-12">
                         <!-- Social Media Icons -->
-                        <a href="#"
+                        <a href="https://www.facebook.com/"
                             class="group relative text-primary hover:text-primary transition-all duration-200 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] p-2 rounded-full bg-white">
                             <span
                                 class="tooltip absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full bg-white text-primary text-xs py-1 px-2 rounded-md shadow-md opacity-0 group-hover:opacity-100 group-hover:-top-4 transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] pointer-events-none">Facebook</span>
@@ -44,7 +44,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <a href="#"
+                        <a href="https://www.instagram.com/"
                             class="group relative text-primary hover:text-primary transition-all duration-200 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] p-2 rounded-full bg-white">
                             <span
                                 class="tooltip absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full bg-white text-primary text-xs py-1 px-2 rounded-md shadow-md opacity-0 group-hover:opacity-100 group-hover:-top-4 transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] pointer-events-none">Instagram</span>
@@ -54,7 +54,7 @@
                                     clip-rule="evenodd" />
                             </svg>
                         </a>
-                        <a href="#"
+                        <a href="https://www.twitter.com/"
                             class="group relative text-primary hover:text-primary transition-all duration-200 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] p-2 rounded-full bg-white">
                             <span
                                 class="tooltip absolute top-0 left-1/2 -translate-x-1/2 -translate-y-full bg-white text-primary text-xs py-1 px-2 rounded-md shadow-md opacity-0 group-hover:opacity-100 group-hover:-top-4 transition-all duration-300 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] pointer-events-none">Twitter</span>

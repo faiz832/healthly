@@ -32,10 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", (e) => {
             const href = link.getAttribute("href");
 
-            // Mulai progress bar hanya jika href bukan "#" atau fragment anchor link (contoh: #demo)
+            // Mendapatkan URL saat ini tanpa bagian hash
+            const currentURL = window.location.href.split("#")[0];
+
+            // Mengecek apakah link mengarah ke halaman yang sama
             if (
                 href !== "#" &&
                 !href.startsWith("#") &&
+                !href.startsWith(currentURL) &&
                 link.getAttribute("target") !== "_blank"
             ) {
                 NProgress.start();
