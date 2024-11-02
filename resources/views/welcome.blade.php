@@ -238,7 +238,7 @@
                             <!-- Top left Image -->
                             <div class="relative">
                                 <div class="bg-white rounded-3xl drop-shadow-3xl overflow-hidden lg:h-64 xl:h-80">
-                                    <img src="{{ asset('assets/images/meal-1.jpg') }}" alt=""
+                                    <img src="{{ asset('assets/images/meal-1.jpg') }}" alt="Image by Iconscout"
                                         class="w-full h-full object-cover object-center">
                                 </div>
                                 <div
@@ -250,7 +250,7 @@
                             <!-- Bottom left Image -->
                             <div class="relative">
                                 <div class="bg-white rounded-3xl drop-shadow-3xl mt-8 overflow-hidden lg:h-64 xl:h-80">
-                                    <img src="{{ asset('assets/images/meal-2.jpg') }}" alt=""
+                                    <img src="{{ asset('assets/images/meal-2.jpg') }}" alt="Image by Iconscout"
                                         class="w-full h-full object-cover object-center">
                                 </div>
                                 <div
