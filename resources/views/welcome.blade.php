@@ -95,21 +95,16 @@
             <!-- Content -->
             <div class="my-24">
                 <div
-                    class="mx-auto aspect-[0.85] w-full overflow-hidden ps-48 pt-64 bg-primaryDark
-                            min-[720px]:aspect-[1.14] 
-                            min-[720px]:ps-80 min-[720px]:pt-80 
-                            min-[1280px]:aspect-[1.9] 
-                            min-[1280px]:rounded-3xl 
-                            min-[1280px]:px-24 
-                            min-[1280px]:pt-24
-                            min-[1536px]:w-[min(80vw,1920px)] drop-shadow-lg">
+                    class="mx-auto aspect-[0.85] w-full overflow-hidden px-20 pt-12 bg-primaryDark rounded-3xl
+                            md:aspect-[1.22] md:px-40 md:pt-20 
+                            lg:aspect-[1.9] lg:px-24 lg:pt-24
+                            min-[1536px]:w-[min(80vw,1920px)] drop-shadow-dark">
                     <div class="relative h-full w-full overflow-hidden">
-                        <video
-                            class="h-full w-full select-none rounded-tl-2xl object-cover object-left-top min-[1280px]:rounded-t-2xl"
-                            autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
+                        <video class="h-full w-full select-none rounded-t-2xl object-cover object-left-top" autoplay
+                            muted loop playsinline disablepictureinpicture disableremoteplayback
                             poster="https://bytescale.mobbin.com/FW25bBB/image/assets/videos/lp_flow_video_demo_v1.mp4?t=0">
                             <source type="video/mp4"
-                                src="https://bytescale.mobbin.com/FW25bBB/video/assets/videos/lp_flow_video_demo_v1.mp4?mute=true&f=mp4-h264&a=/video.mp4&w=500&sh=90&q=6">
+                                src="https://bytescale.mobbin.com/FW25bBB/video/assets/videos/lp_flow_video_demo_v1.mp4?mute=true&f=mp4-h264&a=/video.mp4">
                         </video>
                     </div>
                 </div>
@@ -118,9 +113,9 @@
     </div>
 
     <!-- Features Section -->
-    {{-- <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+    <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <div class="my-32">
-            <div class="flex flex-col lg:flex-row justify-center items-center gap-24">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-0 xl:gap-20">
                 <!-- Left Content Section -->
                 <div class="max-w-xl">
                     <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
@@ -138,60 +133,62 @@
                 </div>
 
                 <!-- Right Image Grid Section -->
-                <div class="relative">
-                    <div class="flex gap-8 items-center">
-                        <div class="">
+                <div class="relative hidden md:block">
+                    <div class="flex gap-8 items-center mx-32 lg:mx-16 xl:mx-20">
+                        <div class="w-1/2">
                             <!-- Top Image -->
                             <div class="relative">
-                                <div class="bg-white rounded-3xl shadow-xl overflow-hidden h-80 w-72">
+                                <div class="bg-white rounded-3xl drop-shadow-3xl overflow-hidden lg:h-64 xl:h-80">
                                     <img src="{{ asset('assets/images/meal-1.jpg') }}" alt="Berat Ideal"
                                         class="w-full h-full object-cover object-center">
                                 </div>
                                 <div
-                                    class="absolute top-8 -left-16 bg-white px-8 py-4 rounded-full text-sm border font-bold shadow-xl">
+                                    class="absolute top-8 -left-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold drop-shadow-3xl">
                                     Berat Ideal
                                 </div>
                             </div>
 
                             <!-- Top Right Image -->
                             <div class="relative">
-                                <div class="bg-white rounded-3xl shadow-xl mt-8 overflow-hidden h-80 w-72">
+                                <div class="bg-white rounded-3xl drop-shadow-3xl mt-8 overflow-hidden lg:h-64 xl:h-80">
                                     <img src="{{ asset('assets/images/meal-2.jpg') }}" alt="Pola Makan Sehat"
                                         class="w-full h-full object-cover object-center">
                                 </div>
                                 <div
-                                    class="absolute bottom-8 -right-16 bg-white px-8 py-4 rounded-full text-sm border font-bold shadow-xl">
+                                    class="absolute bottom-8 -right-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold shadow-xl">
                                     Nutrisi Optimal
                                 </div>
                             </div>
                         </div>
 
                         <!-- Bottom Image -->
-                        <div class="relative">
-                            <div class="bg-white rounded-3xl shadow-xl overflow-hidden h-[400px] w-72">
-                                <img src="{{ asset('assets/images/meal-3.jpg') }}" alt="Nutrisi Optimal"
-                                    class="w-full h-full object-cover object-left">
-                            </div>
-                            <div
-                                class="absolute bottom-32 -right-24 bg-white px-8 py-4 rounded-full text-sm border font-bold shadow-xl">
-                                Pola Makan Sehat
-                            </div>
-                            <!-- Blue Circle Arrow -->
-                            <div
-                                class="absolute -bottom-8 left-24 bg-primaryDark p-4 rounded-full flex items-center justify-center shadow-xl">
-                                <svg width="33" height="33" viewBox="0 0 33 33" fill="none" class="mt-1 ml-1"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M3.45471 3.52056C2.77257 4.18991 2.52106 5.17787 2.79274 6.09732L9.10985 27.5372C9.38307 28.5073 10.1599 29.1929 11.1444 29.3748C12.1463 29.5607 13.415 28.8945 13.9435 28.0283L18.0442 21.303C18.4646 20.6132 18.3554 19.7253 17.7789 19.1577L10.0194 11.5007C9.61542 11.1153 9.61315 10.4751 10.0144 10.0867C10.4023 9.69853 11.0331 9.69629 11.4371 10.0817L19.198 17.7521C19.7731 18.321 20.666 18.4245 21.3571 18.0019L28.1206 13.8775C28.9241 13.3946 29.3776 12.5659 29.3744 11.659C29.374 11.5522 29.3736 11.4322 29.3597 11.3254C29.2219 10.2855 28.5077 9.46108 27.4999 9.15785L6.04284 2.87112C5.12918 2.59422 4.13687 2.85121 3.45471 3.52056Z"
-                                        fill="white" />
-                                </svg>
+                        <div class="w-1/2">
+                            <div class="relative">
+                                <div class="bg-white rounded-3xl drop-shadow-3xl overflow-hidden lg:h-80 xl:h-[400px]">
+                                    <img src="{{ asset('assets/images/meal-3.jpg') }}" alt="Nutrisi Optimal"
+                                        class="w-full h-full object-cover object-left">
+                                </div>
+                                <div
+                                    class="absolute bottom-32 -right-16 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold drop-shadow-3xl">
+                                    Makan Sehat
+                                </div>
+                                <!-- Blue Circle Arrow -->
+                                <div
+                                    class="absolute -bottom-8 xl:-bottom-12 left-24 bg-primaryDark p-2 xl:p-4 rounded-full flex items-center justify-center shadow-xl">
+                                    <svg width="33" height="33" viewBox="0 0 33 33" fill="none"
+                                        class="mt-1 ml-1" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M3.45471 3.52056C2.77257 4.18991 2.52106 5.17787 2.79274 6.09732L9.10985 27.5372C9.38307 28.5073 10.1599 29.1929 11.1444 29.3748C12.1463 29.5607 13.415 28.8945 13.9435 28.0283L18.0442 21.303C18.4646 20.6132 18.3554 19.7253 17.7789 19.1577L10.0194 11.5007C9.61542 11.1153 9.61315 10.4751 10.0144 10.0867C10.4023 9.69853 11.0331 9.69629 11.4371 10.0817L19.198 17.7521C19.7731 18.321 20.666 18.4245 21.3571 18.0019L28.1206 13.8775C28.9241 13.3946 29.3776 12.5659 29.3744 11.659C29.374 11.5522 29.3736 11.4322 29.3597 11.3254C29.2219 10.2855 28.5077 9.46108 27.4999 9.15785L6.04284 2.87112C5.12918 2.59422 4.13687 2.85121 3.45471 3.52056Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
     <!-- Features Section -->
     {{-- <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">

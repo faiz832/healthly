@@ -18,7 +18,8 @@ export default {
                 light: "#F2F2F2",
             },
             dropShadow: {
-                lg: "0 25px 25px rgb(11 105 139 / 0.50)",
+                "3xl": "0 35px 25px rgba(0, 0, 0, 0.3)",
+                dark: "0 25px 25px rgb(11 105 139 / 0.50)",
             },
             fontFamily: {
                 sans: ["Inter", ...defaultTheme.fontFamily.sans],

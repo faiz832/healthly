@@ -49,7 +49,7 @@
                 <!-- Brand Name -->
                 <div class="flex gap-2">
                     <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt="" class="w-8 h-8">
-                    <a href="{{ url('/') }}" class="text-2xl font-semibold mr-4">Healthly</a>
+                    <a href="{{ url('/') }}" class="text-2xl font-semibold mr-4">Healthly AI</a>
                 </div>
             </div>
 

@@ -27,7 +27,7 @@
                 <div class="">
                     <div class="flex items-center gap-2">
                         <img src="{{ asset('assets/icons/healthly-light.png') }}" alt="" class="w-10 h-10">
-                        <a href="{{ url('/') }}" class="text-3xl font-semibold mr-4 text-white">Healthly</a>
+                        <a href="{{ url('/') }}" class="text-3xl font-semibold mr-4 text-white">Healthly AI</a>
                     </div>
                     <p class="mt-8 text-xl text-white font-light max-w-xl">Jl. Kyai Moch. Syafei Gg 1 No.2450,
                         RT.04/RW.08,
