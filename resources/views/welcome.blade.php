@@ -18,6 +18,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* Hide scrollbar in Chrome, Safari and Opera */
         ::-webkit-scrollbar {
             display: none;
@@ -130,7 +134,7 @@
 
     <!-- Demo Section -->
     <div class="overflow-hidden">
-        <section class="relative max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+        <section id="demo" class="relative max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
             <!-- Background Decoration -->
             <div class="absolute top-0 -left-40 z-[-1]">
                 <img src="{{ asset('assets/images/decoration-1.png') }}" alt="" class="w-[354px] h-[363px]">
@@ -448,7 +452,8 @@
         </div>
     </section>
 
-    {{-- <div class="min-h-screen"></div> --}}
+    <section id="partners" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+    </section>
 
     <!-- Up Button -->
     <div id="scrollToTopBtn" onclick="scrollToTop()"

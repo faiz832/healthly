@@ -53,21 +53,14 @@
                 </div>
             </div>
 
-            <!-- Search Input (visible on larger screens) -->
-            {{-- <div class="hidden md:block">
-                <x-search-bar />
-            </div> --}}
-
             <!-- Desktop Navigation (hidden on md and smaller screens) -->
             <div class="hidden md:flex gap-4 lg:gap-[60px]">
-                <a href="{{ url('/') }}"
-                    class="font-semibold hover:text-primary transition duration-300 ease-in-out">How it works</a>
-                <a href="{{ url('/') }}"
+                <a href="#demo" class="font-semibold hover:text-primary transition duration-300 ease-in-out">How it
+                    works</a>
+                <a href="#"
                     class="font-semibold hover:text-primary transition duration-300 ease-in-out">Medicals</a>
-                <a href="{{ url('/') }}"
+                <a href="#partners"
                     class="font-semibold hover:text-primary transition duration-300 ease-in-out">Partners</a>
-                <a href="{{ url('/') }}"
-                    class="font-semibold hover:text-primary transition duration-300 ease-in-out">Services</a>
             </div>
 
             <!-- Login and Register Buttons -->

@@ -30,8 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Menangani klik pada link untuk memulai progress bar
     document.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", (e) => {
+            const href = link.getAttribute("href");
+
+            // Mulai progress bar hanya jika href bukan "#" atau fragment anchor link (contoh: #demo)
             if (
-                link.getAttribute("href") !== "#" &&
+                href !== "#" &&
+                !href.startsWith("#") &&
                 link.getAttribute("target") !== "_blank"
             ) {
                 NProgress.start();
