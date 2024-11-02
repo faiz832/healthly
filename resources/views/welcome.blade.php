@@ -113,7 +113,7 @@
     <!-- Hero Section -->
     <div class="aurora-b">
         <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-            <div class="flex flex-col items-center my-24 gap-12">
+            <div class="flex flex-col items-center my-20 gap-12">
                 <h1
                     class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
                     Healthly with AI Assistant</h1>
@@ -123,6 +123,27 @@
                     <a href="{{ route('food.scan') }}"
                         class="flex justify-center items-center h-12 px-6 bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">Mulai
                         Sekarang</a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center mb-14">
+                <p class="text-lg text-gray-600">Dipercaya oleh</p>
+                <div class="flex gap-8 lg:gap-12 h-4 lg:h-6 mt-8">
+                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="">
+                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_brass.png') }}" alt="">
+                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_releaf.png') }}" alt="">
+                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_salad_africa.png') }}" alt="">
+
+                    <!-- Gambar kelima, hanya tampil di md ke atas -->
+                    <img class="hidden md:block w-full h-full filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_theguardian.png') }}" alt="Logo The Guardian">
+
+                    <!-- Gambar keenam, hanya tampil di lg ke atas -->
+                    <img class="hidden lg:block w-full h-full filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_cropsafe.png') }}" alt="Logo Cropsafe">
                 </div>
             </div>
         </section>
