@@ -1,3 +1,17 @@
+<style>
+    .tooltip::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 8px;
+        height: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
 <!-- Footer -->
 <footer class="bg-primaryDark">
     <div class="mx-auto w-full max-w-[1280px]">

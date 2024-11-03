@@ -90,31 +90,23 @@
         .swing3-animation {
             animation: swing3 3s linear infinite;
         }
-
-
-        .tooltip::before {
-            content: "";
-            position: absolute;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%) rotate(45deg);
-            width: 8px;
-            height: 8px;
-            background-color: #ffffff;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-        }
     </style>
+
+    <!-- Lottie CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 </head>
 
 <body class="font-sans antialiased">
     <!-- Preloader -->
     <div id="loading-screen" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
-        <div class="loader-container flex flex-col items-center gap-4">
-            <!-- Loader SVG -->
-            <img class="loader" src="{{ asset('assets/icons/loader.svg') }}" alt="Loading...">
+        <div class="loader-container flex flex-col items-center">
+            <!-- Loader Lottie JSON -->
+            <div id="lottie-loader" class="w-52 h-52 filter drop-shadow-3xl"></div>
             <!-- Loading text with animated dots -->
-            <h1 class="loading-text text-primaryDark font-semibold">Loading content please wait<span
-                    class="dots">.</span>
+            <h1 class="loading-text text-primaryDark font-semibold -mt-12">Loading content please wait
+                <span class="dots">.</span>
             </h1>
         </div>
     </div>
@@ -566,8 +558,16 @@
     @include('layouts.footer')
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script>
+        // Inisialisasi Lottie Animation
+        lottie.loadAnimation({
+            container: document.getElementById('lottie-loader'), // ID dari elemen container Lottie
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '{{ asset('assets/icons/loader.json') }}' // Path ke file animasi JSON
+        });
+
         // Animasi titik-titik yang muncul setelah "wait"
         function animateDots() {
             let dotsElement = document.querySelector(".dots");
@@ -578,39 +578,23 @@
                 dotsCount = dotsCount < 3 ? dotsCount + 1 : 1;
             }, 500); // Ubah jumlah titik setiap 500ms
         }
+
+        // Panggil animasi titik-titik
         animateDots();
 
-        // GSAP Animasi
+        // Ketika halaman selesai dimuat
         window.addEventListener("load", () => {
-            // Panggil animasi titik-titik
-
-            // Animasi keluar dengan GSAP saat halaman sudah dimuat
+            // Animasi dengan GSAP untuk mengangkat layar preloader
             gsap.to("#loading-screen", {
-                duration: 1.5, // Durasi animasi keluar
-                opacity: 0, // Fade out
-                ease: "power2.out", // Efek easing
+                y: "-100%", // Geser ke atas layar
+                duration: 1, // Durasi animasi
+                ease: "power2.inOut", // Kurva kecepatan untuk animasi yang halus
                 onComplete: () => {
-                    document.getElementById("loading-screen").style.display =
-                        "none"; // Sembunyikan preloader
+                    // Setelah animasi selesai, sembunyikan preloader dan tampilkan konten utama
+                    document.getElementById("loading-screen").style.display = "none";
                 }
             });
         });
-
-        // GSAP Animasi Loader dan Text
-        // gsap.from(".loader", {
-        //     duration: 1,
-        //     scale: 0.5,
-        //     opacity: 0,
-        //     ease: "elastic.out(1, 0.3)"
-        // });
-
-        // gsap.from(".loading-text", {
-        //     duration: 1,
-        //     y: 10,
-        //     opacity: 0,
-        //     ease: "power2.out",
-        //     delay: 0.5
-        // });
 
         // Function to scroll to top
         function scrollToTop() {
