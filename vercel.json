@@ -4,13 +4,13 @@
         "api/index.php": { "runtime": "vercel-php@0.6.0" }
     },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
         { "src": "/assets/images/(.*)", "dest": "/public/assets/images/" },
         { "src": "/assets/icons/(.*)", "dest": "/public/assets/icons/" },
         {
             "src": "/(favicon\\.ico|robots\\.txt|sitemap\\.xml)",
             "dest": "/public/"
         },
+        { "src": "/build/(.*)", "dest": "/public/build/" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
