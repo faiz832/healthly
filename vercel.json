@@ -15,7 +15,7 @@
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_URL": "https://healthly-ai-vercel.app",
         "APP_KEY": "base64:CS2b/i26zjcUyeCtD3m6ulgVu5/OtZtd1tLdQTTdjbg=",
         "APP_CONFIG_CACHE": "/tmp/config.php",
