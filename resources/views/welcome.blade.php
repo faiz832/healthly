@@ -116,8 +116,8 @@
 
     <!-- Hero Section -->
     <div class="aurora-b">
-        <section id="hero" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-            <div class="flex flex-col items-center my-20 gap-12">
+        <section id="hero" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8 min-h-screen">
+            <div class="hidden flex-col items-center my-20 gap-12">
                 <h1
                     class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
                     Healthly with AI Assistant</h1>
@@ -129,7 +129,7 @@
                         Sekarang</a>
                 </div>
             </div>
-            <div class="flex flex-col items-center mb-14">
+            <div class="hidden flex-col items-center mb-14">
                 <p class="text-gray-600">Dipercaya oleh</p>
                 <div class="flex gap-4 md:gap-8 lg:gap-12 mt-8">
                     <!-- Bungkus setiap logo dalam div dengan aspect-ratio -->
@@ -590,8 +590,21 @@
                 duration: 1, // Durasi animasi
                 ease: "power2.inOut", // Kurva kecepatan untuk animasi yang halus
                 onComplete: () => {
-                    // Setelah animasi selesai, sembunyikan preloader dan tampilkan konten utama
+                    // Sembunyikan elemen preloader setelah animasi selesai
                     document.getElementById("loading-screen").style.display = "none";
+
+                    // Tampilkan elemen hero content dan trusted-by dengan animasi fade-up
+                    document.querySelectorAll("#hero .hidden").forEach((el, index) => {
+                        el.classList.remove("hidden");
+                        el.classList.add("flex");
+                        gsap.from(el, {
+                            opacity: 0,
+                            y: 50,
+                            duration: 0.6,
+                            delay: index * 0.2,
+                            ease: "power2.out"
+                        });
+                    });
                 }
             });
         });
