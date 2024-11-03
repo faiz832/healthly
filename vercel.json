@@ -5,11 +5,20 @@
         "api/index.php": { "runtime": "vercel-php@0.6.1" }
     },
     "routes": [
-        { "src": "/build/(.*)", "dest": "/public/build/" },
+        { "src": "/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
+        { "src": "/images/(.*)", "dest": "/public/images/$1" },
+        { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
+        { "src": "/(css|js)/(.*)", "dest": "/public/$1/$2" },
+        {
+            "src": "/(favicon\\.ico|robots\\.txt|sitemap\\.xml)",
+            "dest": "/public/$1"
+        },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
-    "buildCommand": "vite build",
+    "buildCommand": "npm install && npm run build",
+    "installCommand": "composer install",
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
@@ -32,6 +41,8 @@
         "DB_HOST": "j87si.h.filess.io",
         "DB_PORT": "3307",
         "DB_DATABASE": "healthlyAI_containwas",
-        "DB_USERNAME": "healthlyAI_containwas"
+        "DB_USERNAME": "healthlyAI_containwas",
+
+        "ASSET_URL": "https://healthly-ai-vercel.app"
     }
 }
