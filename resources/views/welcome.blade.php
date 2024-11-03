@@ -107,12 +107,24 @@
 </head>
 
 <body class="font-sans antialiased">
+    <!-- Preloader -->
+    <div id="loading-screen" class="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
+        <div class="loader-container flex flex-col items-center gap-4">
+            <!-- Loader SVG -->
+            <img class="loader" src="{{ asset('assets/icons/loader.svg') }}" alt="Loading...">
+            <!-- Loading text with animated dots -->
+            <h1 class="loading-text text-primaryDark font-semibold">Loading content please wait<span
+                    class="dots">.</span>
+            </h1>
+        </div>
+    </div>
+
     <!-- Navbar -->
     @include('layouts.navbar')
 
     <!-- Hero Section -->
     <div class="aurora-b">
-        <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+        <section id="hero" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
             <div class="flex flex-col items-center my-20 gap-12">
                 <h1
                     class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
@@ -126,25 +138,41 @@
                 </div>
             </div>
             <div class="flex flex-col items-center mb-14">
-                <p class="text-lg text-gray-600">Dipercaya oleh</p>
-                <div class="flex gap-8 lg:gap-12 h-4 lg:h-6 mt-8">
-                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="">
-                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_brass.png') }}" alt="">
-                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_releaf.png') }}" alt="">
-                    <img class="w-full h-full filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_salad_africa.png') }}" alt="">
+                <p class="text-gray-600">Dipercaya oleh</p>
+                <div class="flex gap-4 md:gap-8 lg:gap-12 mt-8">
+                    <!-- Bungkus setiap logo dalam div dengan aspect-ratio -->
+                    <div class="aspect-[6/1] flex items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="Logo Halodoc">
+                    </div>
+                    <div class="aspect-[6/1] flex items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="Logo Alodokter">
+                    </div>
+                    <div class="aspect-[6/1] flex items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="Logo Sehatku">
+                    </div>
+
+                    <!-- Gambar keempat, hanya tampil di sm ke atas -->
+                    <div class="hidden sm:flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="Logo Keluarga Sehat">
+                    </div>
 
                     <!-- Gambar kelima, hanya tampil di md ke atas -->
-                    <img class="hidden md:block w-full h-full filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_theguardian.png') }}" alt="Logo The Guardian">
+                    <div class="hidden md:flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="Logo HealthConnect">
+                    </div>
 
                     <!-- Gambar keenam, hanya tampil di lg ke atas -->
-                    <img class="hidden lg:block w-full h-full filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_cropsafe.png') }}" alt="Logo Cropsafe">
+                    <div class="hidden lg:flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="Logo Healthcare">
+                    </div>
                 </div>
+
             </div>
         </section>
     </div>
@@ -526,7 +554,7 @@
 
     <!-- Up Button -->
     <div id="scrollToTopBtn" onclick="scrollToTop()"
-        class="z-50 fixed bottom-7 right-7 cursor-pointer opacity-0 transform translate-y-10 transition-all duration-300 rounded-lg p-4 bg-primaryDark text-white shadow-lg hover:-translate-y-2">
+        class="z-40 fixed bottom-7 right-7 cursor-pointer opacity-0 transform translate-y-10 transition-all duration-300 rounded-lg p-4 bg-primaryDark text-white shadow-lg hover:-translate-y-2">
         <!-- SVG Icon for Up Arrow -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="w-6 h-6">
@@ -538,7 +566,52 @@
     @include('layouts.footer')
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script>
+        // Animasi titik-titik yang muncul setelah "wait"
+        function animateDots() {
+            let dotsElement = document.querySelector(".dots");
+            let dotsCount = 1;
+
+            setInterval(() => {
+                dotsElement.textContent = ".".repeat(dotsCount);
+                dotsCount = dotsCount < 3 ? dotsCount + 1 : 1;
+            }, 500); // Ubah jumlah titik setiap 500ms
+        }
+        animateDots();
+
+        // GSAP Animasi
+        window.addEventListener("load", () => {
+            // Panggil animasi titik-titik
+
+            // Animasi keluar dengan GSAP saat halaman sudah dimuat
+            gsap.to("#loading-screen", {
+                duration: 1.5, // Durasi animasi keluar
+                opacity: 0, // Fade out
+                ease: "power2.out", // Efek easing
+                onComplete: () => {
+                    document.getElementById("loading-screen").style.display =
+                        "none"; // Sembunyikan preloader
+                }
+            });
+        });
+
+        // GSAP Animasi Loader dan Text
+        // gsap.from(".loader", {
+        //     duration: 1,
+        //     scale: 0.5,
+        //     opacity: 0,
+        //     ease: "elastic.out(1, 0.3)"
+        // });
+
+        // gsap.from(".loading-text", {
+        //     duration: 1,
+        //     y: 10,
+        //     opacity: 0,
+        //     ease: "power2.out",
+        //     delay: 0.5
+        // });
+
         // Function to scroll to top
         function scrollToTop() {
             window.scrollTo({

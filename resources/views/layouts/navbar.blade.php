@@ -1,6 +1,6 @@
 <!-- Navbar -->
 <div id="navbar"
-    class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 bg-white supports-backdrop-blur:bg-white/60">
+    class="sticky top-0 z-40 w-full backdrop-blur flex-none transition-colors duration-500 bg-white supports-backdrop-blur:bg-white/60">
     <!-- Primary Navigation Menu -->
     <div class="flex items-center h-[70px]">
         <div class="w-[1280px] relative flex items-center justify-between mx-auto p-4 py-6 lg:py-8">
