@@ -27,24 +27,6 @@
             display: none;
         }
 
-        .aurora-bg {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .aurora-bg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50%;
-            background-image: linear-gradient(83.21deg, #0396a69c 0%, #0B698B 100%);
-            --webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
-            mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
-        }
-
         /* Swing 1: Berlawanan arah jarum jam */
         @keyframes swing1 {
             0% {
@@ -90,6 +72,70 @@
         .swing3-animation {
             animation: swing3 3s linear infinite;
         }
+
+        .slider {
+            width: 100%;
+            height: var(--height);
+            overflow: hidden;
+            mask-image: linear-gradient(to right,
+                    transparent,
+                    #000 10% 90%,
+                    transparent);
+        }
+
+        .slider .list {
+            display: flex;
+            width: 100%;
+            min-width: calc(var(--width) * var(--quantity));
+            position: relative;
+        }
+
+        .slider .list .item {
+            width: var(--width);
+            height: var(--height);
+            position: absolute;
+            left: 100%;
+            animation: autoRun 40s linear infinite;
+            transition: filter 0.5s;
+            animation-delay: calc((40s / var(--quantity)) * (var(--position) - 1) - 40s) !important;
+        }
+
+        .slider .list .item img {
+            width: 100%;
+        }
+
+        @keyframes autoRun {
+            from {
+                left: 100%;
+            }
+
+            to {
+                left: calc(var(--width) * -1);
+            }
+        }
+
+        /* .slider:hover .item {
+            animation-play-state: paused !important;
+            filter: grayscale(1);
+        }
+
+        .slider .item:hover {
+            filter: grayscale(0);
+        } */
+
+        .slider[reverse="true"] .item {
+            animation: reversePlay 40s linear infinite;
+        }
+
+        @keyframes reversePlay {
+            from {
+                left: calc(var(--width) * -1);
+            }
+
+            to {
+                left: 100%;
+            }
+        }
     </style>
 
     <!-- Lottie CDN -->
@@ -115,59 +161,56 @@
     @include('layouts.navbar')
 
     <!-- Hero Section -->
-    <div class="aurora-b">
-        <section id="hero" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8 min-h-screen">
-            <div class="hidden flex-col items-center my-20 gap-12">
-                <h1
-                    class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
-                    Healthly with AI Assistant</h1>
-                <p class="text-xl text-gray-600 max-w-4xl text-center">Mau coba gaya hidup sehat yang gak ribet? Yuk,
-                    biar AI Assistant bantu kamu hitung nutrisi makanan dengan mudah!</p>
-                <div class="">
-                    <a href="{{ route('food.scan') }}"
-                        class="flex justify-center items-center h-12 px-6 bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">Mulai
-                        Sekarang</a>
-                </div>
+    <section id="hero" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8 min-h-screen">
+        <div class="hero-title hidden flex-col items-center my-20 gap-12">
+            <h1
+                class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
+                Healthly with AI Assistant</h1>
+            <p class="text-xl text-gray-600 max-w-4xl text-center">Mau coba gaya hidup sehat yang gak ribet? Yuk,
+                biar AI Assistant bantu kamu hitung nutrisi makanan dengan mudah!</p>
+            <div class="">
+                <a href="{{ route('food.scan') }}"
+                    class="flex justify-center items-center h-12 px-6 bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">Mulai
+                    Sekarang</a>
             </div>
-            <div class="hidden flex-col items-center mb-14">
-                <p class="text-gray-600">Dipercaya oleh</p>
-                <div class="flex gap-4 md:gap-8 lg:gap-12 mt-8">
-                    <!-- Bungkus setiap logo dalam div dengan aspect-ratio -->
-                    <div class="aspect-[6/1] flex items-center justify-center">
-                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                            src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="Logo Halodoc">
-                    </div>
-                    <div class="aspect-[6/1] flex items-center justify-center">
-                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                            src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="Logo Alodokter">
-                    </div>
-                    <div class="aspect-[6/1] flex items-center justify-center">
-                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                            src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="Logo Sehatku">
-                    </div>
-
-                    <!-- Gambar keempat, hanya tampil di sm ke atas -->
-                    <div class="hidden sm:flex aspect-[6/1] items-center justify-center">
-                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                            src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="Logo Keluarga Sehat">
-                    </div>
-
-                    <!-- Gambar kelima, hanya tampil di md ke atas -->
-                    <div class="hidden md:flex aspect-[6/1] items-center justify-center">
-                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                            src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="Logo HealthConnect">
-                    </div>
-
-                    <!-- Gambar keenam, hanya tampil di lg ke atas -->
-                    <div class="hidden lg:flex aspect-[6/1] items-center justify-center">
-                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                            src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="Logo Healthcare">
-                    </div>
+        </div>
+        <div class="hero-partners hidden flex-col items-center mb-14">
+            <p class="text-gray-600">Dipercaya oleh</p>
+            <div class="flex gap-4 md:gap-8 lg:gap-12 mt-8">
+                <!-- Bungkus setiap logo dalam div dengan aspect-ratio -->
+                <div class="flex aspect-[6/1] items-center justify-center">
+                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="Logo Halodoc">
+                </div>
+                <div class="flex aspect-[6/1] items-center justify-center">
+                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="Logo Alodokter">
+                </div>
+                <div class="flex aspect-[6/1] items-center justify-center">
+                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="Logo Sehatku">
                 </div>
 
+                <!-- Gambar keempat, hanya tampil di sm ke atas -->
+                <div class="hidden sm:flex aspect-[6/1] items-center justify-center">
+                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="Logo Keluarga Sehat">
+                </div>
+
+                <!-- Gambar kelima, hanya tampil di md ke atas -->
+                <div class="hidden md:flex aspect-[6/1] items-center justify-center">
+                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="Logo HealthConnect">
+                </div>
+
+                <!-- Gambar keenam, hanya tampil di lg ke atas -->
+                <div class="hidden lg:flex aspect-[6/1] items-center justify-center">
+                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                        src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="Logo Healthcare">
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <!-- Demo Section -->
     <div class="overflow-hidden">
@@ -255,24 +298,8 @@
     <!-- Features 1 Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <div class="my-32">
-            <div class="flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-0 xl:gap-20">
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-4 xl:gap-8">
                 <!-- Left Content Section -->
-                <div class="max-w-xl">
-                    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                        Healthcare with AI<br>
-                        Connects Doctors
-                    </h1>
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Through Video Consultations, Patients Can Receive Expert Medical Advice, Diagnosis, And
-                        Treatment Recommendations Without The Need
-                    </p>
-                    <a href="{{ route('food.scan') }}"
-                        class="flex justify-center items-center h-12 px-6 w-max bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">
-                        Try Now
-                    </a>
-                </div>
-
-                <!-- Right Image Grid Section -->
                 <div class="relative hidden md:block">
                     <div class="flex gap-8 items-center mx-32 lg:mx-16 xl:mx-20">
                         <div class="w-1/2">
@@ -325,6 +352,22 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Right Content Section -->
+                <div class="max-w-xl">
+                    <h1
+                        class="text-center md:text-left text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+                        Unggah Makananmu <br> Sekarang
+                    </h1>
+                    <p class="text-center md:text-left text-gray-600 text-lg mb-8 leading-relaxed">
+                        Bergabunglah dengan ribuan teman-teman yang udah merasakan manfaatnya. Yuk, mulai perjalanan
+                        sehatmu dengan AI Assistant!
+                    </p>
+                    <a href="{{ route('food.scan') }}"
+                        class="mx-auto md:mx-0 flex justify-center items-center h-12 px-6 w-max bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">
+                        Try Now
+                    </a>
                 </div>
             </div>
         </div>
@@ -541,7 +584,125 @@
         </div>
     </section>
 
-    <section id="partners" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+    <!-- CTA to make account -->
+    <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+        <div class="my-24 flex flex-col gap-8">
+            <h1 class="max-w-xl mx-auto text-5xl font-bold text-center">Hitung Nutrisi dalam Makanan Kamu</h1>
+            <p class="max-w-md mx-auto text-center text-lg text-gray-600">
+                Bergabunglah dengan ribuan teman-teman yang
+                udah
+                merasakan manfaatnya.
+                Yuk, mulai
+                perjalanan
+                sehatmu dengan AI Assistant!
+            </p>
+            <div class="flex gap-4 items-center justify-center">
+                <a href="{{ route('login') }}"
+                    class="bg-[#f2f2f2] hover:bg-primaryDark py-2 px-4 font-semibold text-primaryDark hover:text-white text-center transition duration-300 ease-in-out">
+                    Log In
+                </a>
+                <a href="{{ route('register') }}"
+                    class="bg-primaryDark hover:bg-primaryDark py-2 px-4 font-semibold text-white text-center transition duration-300 ease-in-out">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section id="partners" class="py-6 lg:py-8">
+        <div class="mb-32 space-y-8">
+            <div class="slider"
+                style="
+                --width: 150px;
+                --height: 50px;
+                --quantity: 7;
+                ">
+                <div class="list">
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 1">
+                        <img src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 2">
+                        <img src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 3">
+                        <img src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 4">
+                        <img src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 5">
+                        <img src="{{ asset('assets/icons/logo_sehatbugar.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 6">
+                        <img src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 7">
+                        <img src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="slider" reverse="true"
+                style="
+                --width: 150px;
+                --height: 50px;
+                --quantity: 7;
+                ">
+                <div class="list">
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 1">
+                        <img src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 2">
+                        <img src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 3">
+                        <img src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 4">
+                        <img src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 5">
+                        <img src="{{ asset('assets/icons/logo_sehatbugar.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 6">
+                        <img src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 7">
+                        <img src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="slider"
+                style="
+                --width: 150px;
+                --height: 50px;
+                --quantity: 7;
+                ">
+                <div class="list">
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 1">
+                        <img src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 2">
+                        <img src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 3">
+                        <img src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 4">
+                        <img src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 5">
+                        <img src="{{ asset('assets/icons/logo_sehatbugar.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 6">
+                        <img src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="">
+                    </div>
+                    <div class="item aspect-[6/1] flex justify-center items-center" style="--position: 7">
+                        <img src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Up Button -->
@@ -593,15 +754,17 @@
                     // Sembunyikan elemen preloader setelah animasi selesai
                     document.getElementById("loading-screen").style.display = "none";
 
-                    // Tampilkan elemen hero content dan trusted-by dengan animasi fade-up
-                    document.querySelectorAll("#hero .hidden").forEach((el, index) => {
-                        el.classList.remove("hidden");
-                        el.classList.add("flex");
+                    // Tampilkan elemen hero-title dan hero-partners dengan animasi fade-up
+                    document.querySelectorAll("#hero .hero-title, #hero .hero-partners").forEach((el,
+                        index) => {
+                        el.classList.remove("hidden"); // Hapus kelas hidden
+                        el.classList.add("flex"); // Tambahkan kelas flex
+
                         gsap.from(el, {
                             opacity: 0,
                             y: 50,
                             duration: 0.6,
-                            delay: index * 0.2,
+                            delay: index * 0.2, // Set delay untuk efek berurutan
                             ease: "power2.out"
                         });
                     });
