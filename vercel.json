@@ -5,6 +5,7 @@
     },
     "routes": [
         { "src": "/build/(.*)", "dest": "/public/build/" },
+        { "src": "/scan-images/(.*)", "dest": "public/storage/scan-images/" },
         { "src": "/assets/icons/(.*)", "dest": "public/assets/icons/" },
         { "src": "/assets/images/(.*)", "dest": "public/assets/images/" },
         { "src": "/(.*)", "dest": "/api/index.php" }
