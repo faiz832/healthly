@@ -37,16 +37,7 @@ class FoodScanController extends Controller
             $imageTempPath = '/tmp/' . uniqid() . '.' . $file->getClientOriginalExtension();
             file_put_contents($imageTempPath, file_get_contents($filePath));
 
-            // Prepare to save the image in the public/uploads directory
-            $uploadPath = public_path('uploads');
-            $fileName = uniqid() . '.' . $file->getClientOriginalExtension();
-            $finalImagePath = $uploadPath . '/' . $fileName;
-
-            // Move the temporary image to the public/uploads directory
-            file_put_contents($finalImagePath, file_get_contents($imageTempPath));
-            unlink($imageTempPath); // Clean up the temporary file
-
-            $fileContent = file_get_contents($finalImagePath);
+            $fileContent = file_get_contents($imageTempPath);
             $base64FileContent = base64_encode($fileContent);
 
             // Store the uploaded image for local
@@ -88,7 +79,7 @@ class FoodScanController extends Controller
 
             if ($response->failed()) {
                 // Storage::disk('public')->delete($imagePath); // Clean up on failure on local
-                // unlink($imageTempPath); // Clean up on failure on vercel
+                unlink($imageTempPath); // Clean up on failure on vercel
                 Log::error('Google AI API Error: ' . $response->body());
                 return back()->withErrors('Gagal memproses gambar. Silakan coba lagi.');
             }
@@ -103,7 +94,7 @@ class FoodScanController extends Controller
 
             if (!$resultText) {
                 // Storage::disk('public')->delete($imagePath); // Clean up on failure on local
-                // unlink($imageTempPath); // Clean up on failure on vercel
+                unlink($imageTempPath); // Clean up on failure on vercel
                 Log::warning('No text found in API response');
                 return back()->withErrors('Tidak ada hasil. Silakan coba lagi.');
             }
@@ -112,7 +103,7 @@ class FoodScanController extends Controller
             Foodscan::create([
                 'user_id' => $user->id,
                 // 'gambar' => $imagePath, // local
-                'gambar' => $fileName, // vercel
+                'gambar' => basename($imageTempPath), // vercel
                 'analisis' => $resultText,
             ]);
 
@@ -125,7 +116,7 @@ class FoodScanController extends Controller
             return view('scan-result', [
                 'result' => $formattedResult,
                 // 'imagePath' => Storage::url($imagePath), // local
-                'imagePath' => url('uploads/' . $fileName) // vercel
+                'imagePath' => $imageTempPath // vercel
             ]);
         } catch (\Exception $e) {
             Log::error('Error processing the file: ' . $e->getMessage());

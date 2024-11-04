@@ -8,7 +8,6 @@
         { "src": "/favicon.ico", "dest": "/public/$1" },
         { "src": "/assets/icons/(.*)", "dest": "public/assets/icons/" },
         { "src": "/assets/images/(.*)", "dest": "public/assets/images/" },
-        { "src": "/uploads/(.*)", "dest": "/public/uploads/" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
