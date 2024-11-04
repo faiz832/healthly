@@ -6,7 +6,7 @@ use App\Models\Foodscan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-// use Illuminate\Support\Facades\Storage; //local storage
+use Illuminate\Support\Facades\Storage; //local
 
 class FoodScanController extends Controller
 {
@@ -34,16 +34,16 @@ class FoodScanController extends Controller
 
         try {
             // Store the uploaded image in the /tmp directory on Vercel
-            $imageTempPath = '/tmp/' . uniqid() . '.' . $file->getClientOriginalExtension();
-            file_put_contents($imageTempPath, file_get_contents($filePath));
+            // $imageTempPath = '/tmp/' . uniqid() . '.' . $file->getClientOriginalExtension();
+            // file_put_contents($imageTempPath, file_get_contents($filePath));
 
-            $fileContent = file_get_contents($imageTempPath);
-            $base64FileContent = base64_encode($fileContent);
+            // $fileContent = file_get_contents($imageTempPath);
+            // $base64FileContent = base64_encode($fileContent);
 
             // Store the uploaded image for local
-            // $imagePath = $file->store('scan-images', 'public');
-            // $fileContent = file_get_contents($filePath);
-            // $base64FileContent = base64_encode($fileContent);
+            $imagePath = $file->store('scan-images', 'public');
+            $fileContent = file_get_contents($filePath);
+            $base64FileContent = base64_encode($fileContent);
 
 
             $prompt = "Analyze the provided food image and calculate the total nutritional values of the food items shown. For each component in the meal, extract the values for calories, protein, and fat, and then sum them for the overall total. Output the total nutrition as follows:
@@ -78,7 +78,7 @@ class FoodScanController extends Controller
             ])->post('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' . env('GOOGLE_API_KEY'), $requestBody);
 
             if ($response->failed()) {
-                // Storage::disk('public')->delete($imagePath); // Clean up on failure on local
+                Storage::disk('public')->delete($imagePath); // Clean up on failure on local
                 // unlink($imageTempPath); // Clean up on failure on vercel
                 Log::error('Google AI API Error: ' . $response->body());
                 return back()->withErrors('Gagal memproses gambar. Silakan coba lagi.');
@@ -93,28 +93,17 @@ class FoodScanController extends Controller
             $resultText = $data['candidates'][0]['content']['parts'][0]['text'] ?? null;
 
             if (!$resultText) {
-                // Storage::disk('public')->delete($imagePath); // Clean up on failure on local
+                Storage::disk('public')->delete($imagePath); // Clean up on failure on local
                 // unlink($imageTempPath); // Clean up on failure on vercel
                 Log::warning('No text found in API response');
                 return back()->withErrors('Tidak ada hasil. Silakan coba lagi.');
             }
 
-            // Upload the temporary image to Vercel Blob Storage
-            $uploadResponse = $this->uploadToVercelBlob($imageTempPath, $fileMimeType);
-
-            if ($uploadResponse['status'] !== 200) {
-                Log::error('Failed to upload image to Vercel Blob: ' . $uploadResponse['body']);
-                return back()->withErrors('Gagal menyimpan gambar. Silakan coba lagi.');
-            }
-
-            $imagePath = $uploadResponse['url']; // URL dari gambar yang diupload
-
             // Save the scan result to the database
             Foodscan::create([
                 'user_id' => $user->id,
-                // 'gambar' => $imagePath, // local
+                'gambar' => $imagePath, // local
                 // 'gambar' => basename($imageTempPath), // vercel
-                'gambar' => $imagePath, // Simpan URL gambar di Vercel Blob
                 'analisis' => $resultText,
             ]);
 
@@ -126,12 +115,12 @@ class FoodScanController extends Controller
 
             return view('scan-result', [
                 'result' => $formattedResult,
-                // 'imagePath' => Storage::url($imagePath), // local
-                // 'imagePath' => $imageTempPath // vercel
-                'imagePath' => $imagePath // Gambar dari Vercel Blob Storage
+                'imagePath' => Storage::url($imagePath), // local
+                // 'imagePath' => url('uploads/' . basename($imageTempPath)) // vercel
             ]);
         } catch (\Exception $e) {
             Log::error('Error processing the file: ' . $e->getMessage());
+            Log::error('Error details: ' . $e->getTraceAsString());
             return back()->withErrors('Error memproses file. Silakan coba lagi.');
         }
     }
@@ -161,22 +150,5 @@ class FoodScanController extends Controller
 
         // Mengembalikan hasil dengan menggabungkan paragraf yang sudah diformat
         return implode("\n", $formattedParagraphs);
-    }
-
-    private function uploadToVercelBlob($filePath, $mimeType)
-    {
-        $url = 'https://jzjtzdu7b4zzsj5f.public.blob.vercel-storage.com'; // Ganti dengan URL endpoint Vercel Blob Storage
-        $fileContent = file_get_contents($filePath);
-
-        $response = Http::withHeaders([
-            'Authorization' => 'Bearer ' . 'vercel_blob_rw_JZjtZdU7b4ZZsJ5f_EBs5mj8LWFFQQq7TCsjRgsJ90FvpGL', // Ganti dengan token API Anda
-            'Content-Type' => $mimeType,
-        ])->put($url, $fileContent);
-
-        return [
-            'status' => $response->status(),
-            'body' => $response->body(),
-            'url' => $response->json()['url'] ?? null, // Pastikan untuk menyesuaikan ini dengan respons dari API
-        ];
     }
 }
