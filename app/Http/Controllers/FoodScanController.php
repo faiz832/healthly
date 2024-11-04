@@ -116,7 +116,7 @@ class FoodScanController extends Controller
             return view('scan-result', [
                 'result' => $formattedResult,
                 // 'imagePath' => Storage::url($imagePath), // local
-                'imagePath' => url('uploads/' . basename($imageTempPath)) // vercel
+                'imagePath' => basename($imageTempPath) // vercel
             ]);
         } catch (\Exception $e) {
             Log::error('Error processing the file: ' . $e->getMessage());
