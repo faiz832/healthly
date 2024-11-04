@@ -55,13 +55,13 @@
 
             <!-- Desktop Navigation (hidden on md and smaller screens) -->
             <div class="hidden md:flex gap-4 lg:gap-[60px]">
-                <a href="{{ url('/#demo') }}" data-target="#demo"
-                    class="smooth-scroll font-semibold hover:text-primary transition duration-300 ease-in-out">How it
+                <a href="{{ url('/#demo') }}"
+                    class="font-semibold hover:text-primary transition duration-300 ease-in-out">How it
                     works</a>
-                <a href="{{ url('/#') }}" data-target="#"
-                    class="smooth-scroll font-semibold hover:text-primary transition duration-300 ease-in-out">Medicals</a>
-                <a href="{{ url('/#partners') }}" data-target="#partners"
-                    class="smooth-scroll font-semibold hover:text-primary transition duration-300 ease-in-out">Partners</a>
+                <a href="{{ url('/#') }}"
+                    class="font-semibold hover:text-primary transition duration-300 ease-in-out">Medicals</a>
+                <a href="{{ url('/#partners') }}"
+                    class="font-semibold hover:text-primary transition duration-300 ease-in-out">Partners</a>
             </div>
 
             <!-- Login and Register Buttons -->
@@ -172,24 +172,5 @@
         } else {
             navbar.classList.remove('border-b', 'border-slate-200', 'shadow-md');
         }
-    });
-
-    document.querySelectorAll('.smooth-scroll').forEach(link => {
-        link.addEventListener('click', function(event) {
-            const targetId = this.getAttribute('data-target');
-            const targetElement = document.querySelector(targetId);
-
-            // Jika ID target ada dan URL sekarang mengandung path yang sama dengan link
-            if (targetElement && window.location.pathname === this.pathname) {
-                event.preventDefault(); // Mencegah reload
-
-                // Scroll ke elemen target dengan animasi smooth
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-            // Jika URL berbeda, tautan akan bekerja normal dan berpindah halaman
-        });
     });
 </script>
