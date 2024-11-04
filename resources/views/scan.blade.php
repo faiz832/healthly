@@ -23,6 +23,22 @@
         ::-webkit-scrollbar {
             display: none;
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -39,14 +55,25 @@
                     <h1 class="text-xl font-bold">Upload your food here!</h1>
                     <p class="text-lg text-gray-600">Add your documents here, and you can upload up to 5 files max
                     </p>
+                    <!-- Tampilkan Pesan Error Jika Ada -->
+                    @if ($errors->any())
+                        <div class="mt-2 mb-4 p-4 text-red-700 bg-red-100 border border-red-300 rounded">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @if (Route::has('login'))
                         @auth
                             <div id="uploadContainer"
                                 class="mt-4 px-6 py-12 bg-white border-2 border-dashed border-gray-300 rounded-lg text-center transition-all duration-300 ease-in-out">
-                                <form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
+                                <form id="scanForm" action="{{ route('scan.result') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
-                                    <input type="file" name="cv_file" id="fileInput" class="hidden"
-                                        accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" onchange="showFileName()">
+                                    <input type="file" name="food_img" id="fileInput" class="hidden"
+                                        accept=".jpg,.jpeg,.png" onchange="showFileName()">
                                     <button type="button" onclick="document.getElementById('fileInput').click()"
                                         class="w-full flex flex-col items-center py-4">
                                         <svg width="37" height="36" viewBox="0 0 37 36" fill="none"
@@ -65,10 +92,19 @@
                                         </svg>Choose Photo
                                     </button>
                                     <p id="fileName" class="text-sm text-gray-500 mb-4"></p>
-                                    <button type="submit" id="optimizeButton"
-                                        class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 mb-4 rounded transition duration-300 ease-in-out">
-                                        <span class="button-text">Optimize</span>
-                                        <span class="loading-spinner"></span>
+                                    <button type="submit" id="scanButton" disabled
+                                        class="hidden items-center justify-center mx-auto gap-2 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mb-4 rounded transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed">
+                                        <span id="loadingSpinner" class="hidden">
+                                            <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 24 24">
+                                                <circle class="opacity-25" cx="12" cy="12" r="10"
+                                                    stroke="currentColor" stroke-width="4"></circle>
+                                                <path class="opacity-75" fill="currentColor"
+                                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <span id="buttonText">Scan Now</span>
                                     </button>
                                     <p class="text-sm text-gray-600">Your Token: {{ Auth::user()->ai_token ?? '0' }}
                                     </p>
@@ -130,11 +166,9 @@
                 <div class="my-24 flex flex-col items-center">
                     <h1 class="font-bold">Tidak punya gambar? Coba salah satu ini:</h1>
                     <div class="flex gap-2 mt-4">
-                        <button data-v-f16f3f3b=""
-                            class="btn-image rounded-lg overflow-hidden select-none shrink-0 relative focus:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover focus-visible:outline-none transition ease-in-out active:scale-[0.98] border-1 border-secondary hover:border-secondary-hover active:border-secondary-active"
-                            ondragstart="return false;">
-                            <div data-v-f16f3f3b=""
-                                class="w-full h-full hover:opacity-80 hover:border-secondary-hover active:opacity-60 active:border-secondary-active">
+                        <button onclick="selectImage('{{ asset('assets/images/meal-1.jpg') }}')"
+                            class="rounded-lg overflow-hidden select-none shrink-0 relative focus:outline-none focus:ring focus:ring-primary transition ease-in-out active:scale-[0.98]">
+                            <div class="w-full h-full hover:opacity-80 active:opacity-60">
                                 <figure class="m-0 h-12 w-12 sm:h-16 sm:w-16">
                                     <picture>
                                         <img src="{{ asset('assets/images/meal-1.jpg') }}" alt="Example image"
@@ -144,11 +178,9 @@
                                 </figure>
                             </div>
                         </button>
-                        <button data-v-f16f3f3b=""
-                            class="btn-image rounded-lg overflow-hidden select-none shrink-0 relative focus:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover focus-visible:outline-none transition ease-in-out active:scale-[0.98] border-1 border-secondary hover:border-secondary-hover active:border-secondary-active"
-                            ondragstart="return false;">
-                            <div data-v-f16f3f3b=""
-                                class="w-full h-full hover:opacity-80 hover:border-secondary-hover active:opacity-60 active:border-secondary-active">
+                        <button onclick="selectImage('{{ asset('assets/images/meal-2.jpg') }}')"
+                            class="rounded-lg overflow-hidden select-none shrink-0 relative focus:outline-none focus:ring focus:ring-primary transition ease-in-out active:scale-[0.98]">
+                            <div class="w-full h-full hover:opacity-80 active:opacity-60">
                                 <figure class="m-0 h-12 w-12 sm:h-16 sm:w-16">
                                     <picture>
                                         <img src="{{ asset('assets/images/meal-2.jpg') }}" alt="Example image"
@@ -158,11 +190,9 @@
                                 </figure>
                             </div>
                         </button>
-                        <button data-v-f16f3f3b=""
-                            class="btn-image rounded-lg overflow-hidden select-none shrink-0 relative focus:outline-none focus:ring-none focus-visible:ring focus-visible:ring-offset-2 focus-visible:ring-primary-hover focus-visible:outline-none transition ease-in-out active:scale-[0.98] border-1 border-secondary hover:border-secondary-hover active:border-secondary-active"
-                            ondragstart="return false;">
-                            <div data-v-f16f3f3b=""
-                                class="w-full h-full hover:opacity-80 hover:border-secondary-hover active:opacity-60 active:border-secondary-active">
+                        <button onclick="selectImage('{{ asset('assets/images/meal-3.jpg') }}')"
+                            class="rounded-lg overflow-hidden select-none shrink-0 relative focus:outline-none focus:ring focus:ring-primary transition ease-in-out active:scale-[0.98]">
+                            <div class="w-full h-full hover:opacity-80 active:opacity-60">
                                 <figure class="m-0 h-12 w-12 sm:h-16 sm:w-16">
                                     <picture>
                                         <img src="{{ asset('assets/images/meal-3.jpg') }}" alt="Example image"
@@ -174,11 +204,11 @@
                         </button>
                     </div>
                     <div class="max-w-md">
-                        <p class="text-xs text-typo-secondary mt-4 text-center">By uploading an image you agree
-                            to our <a target="_blank" class="text-typo-secondary underline" draggable="false"
-                                href="{{ url('/terms') }}">Terms of Service</a>.
-                            To learn more about how Healthly AI handles your personal data, check our <a
-                                target="_blank" rel="noopener" class="underline" style="color: inherit;"
+                        <p class="text-xs text-typo-secondary mt-4 text-center">Dengan mengunggah gambar, Anda setuju
+                            dengan <a target="_blank" class="text-typo-secondary underline" draggable="false"
+                                href="{{ url('/terms') }}">Terms of Service</a> kami.
+                            Untuk mempelajari lebih lanjut tentang cara Healthly AI menangani data pribadi Anda, lihat
+                            <a target="_blank" rel="noopener" class="underline" style="color: inherit;"
                                 href="{{ url('/privacy') }}">Privacy
                                 Policy
                             </a>.
@@ -193,31 +223,102 @@
     </div>
 
     <script>
+        // Function to show the selected file name
         function showFileName() {
             const fileInput = document.getElementById('fileInput');
-            const fileNameDisplay = document.getElementById('fileName');
-            if (fileInput.files.length > 0) {
-                fileNameDisplay.textContent = `Selected file: ${fileInput.files[0].name}`;
-            } else {
-                fileNameDisplay.textContent = '';
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : '';
+            document.getElementById('fileName').textContent = fileName;
+        }
+
+        // Function to select an image
+        async function selectImage(imageUrl) {
+            try {
+                const response = await fetch(imageUrl);
+                const blob = await response.blob();
+                const file = new File([blob], "selected_image.jpg", {
+                    type: blob.type
+                });
+
+                // Populate the file input
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                document.getElementById('fileInput').files = dataTransfer.files;
+
+                // Show the filename in UI
+                document.getElementById('fileName').textContent = file.name;
+                document.getElementById('scanButton').classList.remove('hidden');
+                document.getElementById('scanButton').classList.add('flex');
+                document.getElementById('scanButton').classList.add('animate-fade-in');
+                document.getElementById('scanButton').disabled = false;
+            } catch (error) {
+                console.error("Failed to select image:", error);
             }
         }
 
-        const optimizeButton = document.getElementById('optimizeButton');
-        const form = optimizeButton.closest('form');
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('scanForm');
+            const fileInput = document.getElementById('fileInput');
+            const fileName = document.getElementById('fileName');
+            const scanButton = document.getElementById('scanButton');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const buttonText = document.getElementById('buttonText');
 
-        form.addEventListener('submit', function(e) {
-            // Ubah tombol menjadi mode loading
-            optimizeButton.classList.add('button-loading');
+            // Handle file selection
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    fileName.textContent = file.name;
+                    // Show the scan button with a smooth fade-in effect
+                    scanButton.classList.remove('hidden');
+                    scanButton.classList.add('flex');
+                    scanButton.classList.add('animate-fade-in');
+                    scanButton.disabled = false;
+                } else {
+                    fileName.textContent = '';
+                    // Hide the scan button
+                    scanButton.classList.add('hidden');
+                    scanButton.disabled = true;
+                }
+            });
 
-            // Nonaktifkan tombol untuk mencegah double-submit
-            optimizeButton.disabled = true;
+            // Handle form submission
+            form.addEventListener('submit', function(e) {
+                // Validate file input
+                if (!fileInput.files.length) {
+                    e.preventDefault();
+                    alert('Please select a file first');
+                    return;
+                }
 
-            // Simulasi proses loading (ganti dengan kode submit form yang sebenarnya)
-            setTimeout(() => {
-                optimizeButton.classList.remove('button-loading');
-                optimizeButton.disabled = false;
-            }, 30000);
+                // Show loading state
+                scanButton.disabled = true;
+                loadingSpinner.classList.remove('hidden');
+                buttonText.textContent = 'Processing...';
+
+                // Add loading cursor
+                document.body.style.cursor = 'wait';
+            });
+        });
+
+        // Reset form state if user navigates back
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                // Reset form elements
+                const scanButton = document.getElementById('scanButton');
+                const loadingSpinner = document.getElementById('loadingSpinner');
+                const buttonText = document.getElementById('buttonText');
+                const fileName = document.getElementById('fileName');
+                const fileInput = document.getElementById('fileInput');
+
+                scanButton.classList.add('hidden');
+                scanButton.disabled = true;
+                loadingSpinner.classList.add('hidden');
+                buttonText.textContent = 'Scan';
+                fileName.textContent = '';
+                fileInput.value = '';
+                document.body.style.cursor = 'default';
+            }
         });
     </script>
 </body>
