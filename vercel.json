@@ -5,12 +5,12 @@
     },
     "routes": [
         { "src": "/build/(.*)", "dest": "/public/build/" },
-        { "src": "/favicon.ico", "dest": "/public/" },
+        { "src": "/(.*)", "dest": "/public/" },
         { "src": "/assets/icons/(.*)", "dest": "public/assets/icons/" },
         { "src": "/assets/images/(.*)", "dest": "public/assets/images/" },
         {
-            "src": "/uploads/scan-images/(.*)",
-            "dest": "/public/uploads/scan-images/"
+            "src": "/uploads/(.*)",
+            "dest": "/public/uploads/"
         },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
