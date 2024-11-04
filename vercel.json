@@ -8,10 +8,6 @@
         { "src": "/assets/icons/(.*)", "dest": "public/assets/icons/" },
         { "src": "/assets/images/(.*)", "dest": "public/assets/images/" },
         {
-            "src": "/(favicon\\.ico|robots\\.txt|sitemap\\.xml)",
-            "dest": "/public/"
-        },
-        {
             "src": "/storage/scan-images/(.*)",
             "dest": "/public/storage/scan-images/"
         },

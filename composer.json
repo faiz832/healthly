@@ -38,11 +38,7 @@
     },
     "scripts": {
         "vercel": [
-            "npm install && npm run build"
-        ],
-        "post-install-cmd": [
-            "php artisan storage:link",
-            "mkdir -p storage/app/public/scan-images"
+            "npm install && npm run build && php artisan storage:link && mkdir -p storage/app/public/scan-images"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
