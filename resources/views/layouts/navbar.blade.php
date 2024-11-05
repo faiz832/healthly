@@ -85,7 +85,7 @@
 
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
-                                    class="hidden md:inline justify-center items-center px-4 py-2 rounded-md bg-primary hover:bg-primaryDark text-white text-center font-bold transition duration-300 ease-in-out">
+                                    class="hidden md:inline justify-center items-center px-4 py-2 rounded-md bg-primaryDark hover:bg-[#055775] text-white text-center font-bold transition duration-300 ease-in-out">
                                     Sign Up
                                 </a>
                             @endif
