@@ -51,6 +51,7 @@ class FoodScanController extends Controller
                         Kalori: (total calories) kalori
                         Protein: (total protein) gram
                         Lemak: (total fat) gram
+                        Karbohidrat: (total carbs) gram
                         Only display the nutrition information as in the provided format, with no additional text or explanations and display it in indonesian language!.
                         if the image is not a food image then the output is 'Gambar ini bukan gambar makanan. Pastikan gambar yang anda masukkan adalah gambar makanan' and if the image cannot be analyzed then the output is 'Gambar ini tidak dapat dianalisis. Silahkan coba lagi'.
                         If you feel that you cannot analyze even if the image entered is a food image then, just provide the nutritional data approximately.";
