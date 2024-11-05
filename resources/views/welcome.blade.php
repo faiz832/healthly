@@ -672,159 +672,99 @@
             <div class="w-full max-w-screen-[1280px] columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8">
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar1.png') }}" alt=""
+                            class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Raka Wiratama</h1>
+                            <p class="text-gray-400">@rakawira</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
-                        space in
-                        my </p>
+                    <p class="mt-4 text-lg text-gray-600"> AI Assistant-nya bikin saya lebih paham tentang pentingnya
+                        nutrisi.</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar2.png') }}" alt=""
+                            class="w-16 h-16  rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Maya Pranindya</h1>
+                            <p class="text-gray-400">@mayapran</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
-                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
-                        the team for doing God’s work.</p>
+                    <p class="mt-4 text-lg text-gray-600">Sejak saya mulai menggunakan Healthly with AI Assistant,
+                        hidup saya berubah total!</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar3.png') }}" alt=""
+                            class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Putri Anggita</h1>
+                            <p class="text-gray-400">@putrianggt</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
-                        space in
-                        my </p>
+                    <p class="mt-4 text-lg text-gray-600">AI Assistant ini bener-bener helpful! Saya bisa menghitung
+                        kebutuhan nutrisi harian dan dapet tips sehat yang sesuai dengan gaya hidup saya.</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar4.png') }}" alt=""
+                            class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Alif Ramadhan</h1>
+                            <p class="text-gray-400">@aliframadh</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
-                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
-                        the team for doing God’s work.</p>
+                    <p class="mt-4 text-lg text-gray-600">Gak pernah kepikiran bisa punya asisten nutrisi pribadi yang
+                        bisa diakses kapan aja.</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar5.png') }}" alt=""
+                            class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Fajar Nugroho</h1>
+                            <p class="text-gray-400">@fajarnugra</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
-                        space in
-                        my </p>
+                    <p class="mt-4 text-lg text-gray-600">Healthy with AI Assistant sangat membantu saya memahami
+                        kandungan nutrisi makanan secara cepat.</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar6.png') }}" alt=""
+                            class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Sinta Lestari</h1>
+                            <p class="text-gray-400">@sintalest</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
-                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
-                        the team for doing God’s work.</p>
+                    <p class="mt-4 text-lg text-gray-600">Saya sangat terkesan dengan fitur analisis gambar makanan di
+                        Healthy AI</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar7.png') }}" alt=""
+                            class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Ayu Kartika </h1>
+                            <p class="text-gray-400">@ayukartk</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
-                        space in
-                        my </p>
+                    <p class="mt-4 text-lg text-gray-600">Fitur analisis gambar sangat praktis! untuk melihat nutrisi
+                        yang ada di makanan</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
+                        <img src="{{ asset('assets/images/Avatar8.png') }}" alt=""
+                            class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Bayu Setiawan</h1>
+                            <p class="text-gray-400">@bayuset</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
-                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
-                        the team for doing God’s work.</p>
-                </div>
-                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
-                        space in
-                        my </p>
-                </div>
-                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
-                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
-                        the team for doing God’s work.</p>
-                </div>
-                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">By using the Mobbin app, I save both my research time and
-                        space in
-                        my </p>
-                </div>
-                <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
-                    <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                            class="w-10 h-10 rounded-full object-cover object-center">
-                        <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Darin Nguyen</h1>
-                            <p class="text-gray-400">@staking</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-lg text-gray-600">All my homies love Mobbin. I mean that. I finally deleted
-                        that folder of 1,866 unorganized screenshots and haven’t looked back since. Shoutout to Jiho and
-                        the team for doing God’s work.</p>
+                    <p class="mt-4 text-lg text-gray-600">Saya baru mulai menggunakan Healthly with AI Assistant dan
+                        wow, perubahan yang saya rasakan luar biasa!</p>
                 </div>
             </div>
             <div class="absolute bottom-0 w-full h-48 bg-gradient-to-t from-white to-transparent"></div>
