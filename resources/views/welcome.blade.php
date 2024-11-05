@@ -124,20 +124,17 @@
             transition: opacity 0.5s;
         }
 
-        .carousel .list .item .introduce .title {
-            font-size: 2em;
-            font-weight: 500;
-            line-height: 1em;
-        }
-
         .carousel .list .item .introduce .topic {
-            font-size: 4em;
-            font-weight: 500;
+            font-size: 3.75rem;
+            line-height: 1;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
         }
 
         .carousel .list .item .introduce .des {
             font-size: 1.125rem;
-            color: #5559;
+            line-height: 1.75rem;
+            color: #4b5563;
         }
 
         .carousel .list .item:nth-child(1) {
@@ -168,7 +165,6 @@
         }
 
         /* animation text in item2 */
-        .carousel .list .item:nth-child(2) .introduce .title,
         .carousel .list .item:nth-child(2) .introduce .topic,
         .carousel .list .item:nth-child(2) .introduce .des {
             opacity: 0;
@@ -188,12 +184,8 @@
             }
         }
 
-        .carousel .list .item:nth-child(2) .introduce .topic {
-            animation-delay: 1.2s;
-        }
-
         .carousel .list .item:nth-child(2) .introduce .des {
-            animation-delay: 1.4s;
+            animation-delay: 1.2s;
         }
 
         /* next click */
@@ -268,12 +260,6 @@
                 filter: var(--item1-filter);
                 opacity: var(--item1-opacity);
             }
-        }
-
-        /* detail  */
-        .carousel .list .item .detail {
-            opacity: 0;
-            pointer-events: none;
         }
 
         .arrows {
@@ -526,52 +512,40 @@
                         <div class="item">
                             <img src="{{ asset('assets/images/img3d-1.png') }}">
                             <div class="introduce">
-                                <div class="title">Makanan Sehat</div>
-                                <div class="topic">Aerphone</div>
+                                <div class="topic">Hitung Nutrisi Instan</div>
                                 <div class="des">
-                                    <!-- 20 lorem -->
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
-                                    dignissimos
-                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                    Unggah foto makananmu, biarkan AI menganalisis kalori, protein, dan nutrisi lainnya
+                                    dalam sekejap. Mudah dan cepat!
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="{{ asset('assets/images/img3d-1.png') }}">
+                            <img src="{{ asset('assets/images/img3d-2.png') }}">
                             <div class="introduce">
-                                <div class="title">Hidup Sehat</div>
-                                <div class="topic">Aerphone</div>
+                                <div class="topic">Gaya Hidup Sehat</div>
                                 <div class="des">
-                                    <!-- 20 lorem -->
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
-                                    dignissimos
-                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                    Ketahui kandungan gizi makananmu hanya dengan satu klik. Mulai hidup sehat tanpa
+                                    ribet bersama Healthly AI!
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="{{ asset('assets/images/img3d-1.png') }}">
+                            <img src="{{ asset('assets/images/img3d-3.png') }}">
                             <div class="introduce">
-                                <div class="title">Nutrisi Tercukupi</div>
-                                <div class="topic">Aerphone</div>
+                                <div class="topic">Temukan Gizi Makanan</div>
                                 <div class="des">
-                                    <!-- 20 lorem -->
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
-                                    dignissimos
-                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                    Dapatkan info nutrisi lengkap dari makananmu. Ideal untuk hidup sehat, diet, dan
+                                    menjaga pola makan seimbang.
                                 </div>
                             </div>
                         </div>
                         <div class="item">
-                            <img src="{{ asset('assets/images/img3d-1.png') }}">
+                            <img src="{{ asset('assets/images/img3d-4.png') }}">
                             <div class="introduce">
-                                <div class="title">Sehat Walafiat</div>
-                                <div class="topic">Aerphone</div>
+                                <div class="topic">Analisis Cepat Makananmu</div>
                                 <div class="des">
-                                    <!-- 20 lorem -->
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
-                                    dignissimos
-                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                    Foto, unggah, dan lihat data nutrisi makananmu dalam detik. Solusi tepat untuk
+                                    pantau gizi harian!
                                 </div>
                             </div>
                         </div>
@@ -653,8 +627,9 @@
                         Unggah Makananmu <br> Sekarang
                     </h1>
                     <p class="text-center md:text-left text-gray-600 text-lg mb-8 leading-relaxed">
-                        Bergabunglah dengan ribuan teman-teman yang udah merasakan manfaatnya. Yuk, mulai perjalanan
-                        sehatmu dengan AI Assistant!
+                        Dengan Healthly AI, kamu bisa mengetahui detail nutrisi makananmu hanya dengan satu kali klik.
+                        Unggah foto makananmu, dan biarkan Healthly AI menganalisis nutrisi untuk gaya hidup yang lebih
+                        baik.
                     </p>
                     <a href="{{ route('food.scan') }}"
                         class="mx-auto md:mx-0 w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
@@ -669,7 +644,7 @@
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <h1 class="text-5xl font-bold text-center">What They Say</h1>
         <div class="relative flex flex-col flex-wrap mt-24 gap-8">
-            <div class="w-full max-w-screen-[1280px] columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8">
+            <div class="w-full max-w-[1280px] mb-12 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8">
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
                         <img src="{{ asset('assets/images/Avatar1.png') }}" alt=""
@@ -696,27 +671,28 @@
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/images/Avatar3.png') }}" alt=""
+                        <img src="{{ asset('assets/images/Avatar7.png') }}" alt=""
                             class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Putri Anggita</h1>
-                            <p class="text-gray-400">@putrianggt</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Ayu Kartika </h1>
+                            <p class="text-gray-400">@ayukartk</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">AI Assistant ini bener-bener helpful! Saya bisa menghitung
-                        kebutuhan nutrisi harian dan dapet tips sehat yang sesuai dengan gaya hidup saya.</p>
+                    <p class="mt-4 text-lg text-gray-600">Fitur analisis gambar sangat praktis! untuk melihat nutrisi
+                        yang ada di makanan</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/images/Avatar4.png') }}" alt=""
+                        <img src="{{ asset('assets/images/Avatar8.png') }}" alt=""
                             class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Alif Ramadhan</h1>
-                            <p class="text-gray-400">@aliframadh</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Bayu Setiawan</h1>
+                            <p class="text-gray-400">@bayuset</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">Gak pernah kepikiran bisa punya asisten nutrisi pribadi yang
-                        bisa diakses kapan aja.</p>
+                    <p class="mt-4 text-lg text-gray-600">Saya baru mulai menggunakan Healthly with AI Assistant dan
+                        wow, perubahan yang saya rasakan luar biasa! dan Saya sangat terkesan dengan fitur analisis
+                        gambarnya</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
@@ -744,27 +720,27 @@
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/images/Avatar7.png') }}" alt=""
+                        <img src="{{ asset('assets/images/Avatar4.png') }}" alt=""
                             class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Ayu Kartika </h1>
-                            <p class="text-gray-400">@ayukartk</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Alif Ramadhan</h1>
+                            <p class="text-gray-400">@aliframadh</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">Fitur analisis gambar sangat praktis! untuk melihat nutrisi
-                        yang ada di makanan</p>
+                    <p class="mt-4 text-lg text-gray-600">Gak pernah kepikiran bisa punya asisten nutrisi pribadi yang
+                        bisa diakses kapan aja.</p>
                 </div>
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
                     <div class="flex gap-4 items-center">
-                        <img src="{{ asset('assets/images/Avatar8.png') }}" alt=""
+                        <img src="{{ asset('assets/images/Avatar3.png') }}" alt=""
                             class="w-16 h-16 rounded-full object-cover object-center">
                         <div class="">
-                            <h1 class="text-lg font-bold text-primaryDark">Bayu Setiawan</h1>
-                            <p class="text-gray-400">@bayuset</p>
+                            <h1 class="text-lg font-bold text-primaryDark">Putri Anggita</h1>
+                            <p class="text-gray-400">@putrianggt</p>
                         </div>
                     </div>
-                    <p class="mt-4 text-lg text-gray-600">Saya baru mulai menggunakan Healthly with AI Assistant dan
-                        wow, perubahan yang saya rasakan luar biasa!</p>
+                    <p class="mt-4 text-lg text-gray-600">AI Assistant ini bener-bener helpful! Saya bisa menghitung
+                        kebutuhan nutrisi harian dan dapet tips sehat yang sesuai dengan gaya hidup saya.</p>
                 </div>
             </div>
             <div class="absolute bottom-0 w-full h-48 bg-gradient-to-t from-white to-transparent"></div>
