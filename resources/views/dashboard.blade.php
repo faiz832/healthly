@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="flex">
-        <div class="w-full max-w-[1200px] relative flex items-start mx-auto p-4 py-6 lg:py-8 gap-8">
+        <div class="w-full max-w-[1280px] relative flex items-start mx-auto p-4 py-6 lg:py-8 gap-8">
             @include('layouts.sidebar')
 
             <!-- Main Content -->
@@ -15,41 +15,43 @@
                 <!-- Table -->
                 <div class="bg-white mt-4 rounded-lg p-6 shadow border border-gray-200 overflow-auto">
                     <h1 class="font-semibold mb-4">Riwayat Analisis Kamu</h1>
-                    <table class="w-full rounded-lg overflow-hidden shadow">
+                    <table class="w-full table-auto rounded-lg overflow-hidden shadow">
                         <thead class="bg-gray-50">
                             <tr>
                                 <th
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    No</th>
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-12">
+                                    No
+                                </th>
                                 <th
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Image</th>
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Image
+                                </th>
                                 <th
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Analysis</th>
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Analysis
+                                </th>
                                 <th
-                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                    Date</th>
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Date
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($foods as $food)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $loop->iteration }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-[36px] w-[36px] object-cover rounded"
+                                    <td class="px-4 py-4 whitespace-nowrap text-sm">{{ $loop->iteration }}</td>
+                                    <td class="px-4 py-4 whitespace-nowrap">
+                                        <div class="flex items-center justify-center">
+                                            <img class="h-10 w-10 object-cover rounded"
                                                 src="{{ Storage::url($food->gambar) }}" alt="makanan kamu"
                                                 loading="lazy" />
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">
-                                            {{ $food->analisis }}</div>
+                                    <td class="px-4 py-4 whitespace-normal text-sm text-gray-900">
+                                        {{ $food->analisis }}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">
-                                            {{ $food->created_at->format('d-m-Y') }}</div>
+                                    <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        {{ $food->created_at->format('d-m-Y') }}
                                     </td>
                                 </tr>
                             @endforeach

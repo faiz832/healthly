@@ -54,7 +54,7 @@
                             </div>
                             <div class="flex justify-between items-center">
                                 <a href="{{ route('food.scan') }}"
-                                    class="justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primaryDark transition duration-300">
+                                    class="flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
                                     Scan gambar lain
                                 </a>
                                 <span class="text-sm text-gray-500 ml-auto">
