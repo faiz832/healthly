@@ -37,8 +37,8 @@
                 <div class="w-full max-w-4xl mx-auto p-4 border border-gray-300 rounded-3xl shadow-2xl">
                     <div class="flex gap-6">
                         <!-- Image Section -->
-                        <div class="space-y-4 w-2/5">
-                            <div class="w-full h-full rounded-lg overflow-hidden shadow-lg">
+                        <div class="space-y-4 w-2/5 h-80">
+                            <div class="w-full h-full rounded-2xl overflow-hidden shadow-lg">
                                 <img src="{{ $imagePath }}" alt="Analyzed Image"
                                     class="w-full h-full object-cover object-center">
                             </div>

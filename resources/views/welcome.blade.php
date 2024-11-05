@@ -55,13 +55,28 @@
         /* carousel */
         .carousel {
             position: relative;
-            height: 600px;
+            height: 800px;
+        }
+
+        .carousel::before {
+            width: 500px;
+            height: 300px;
+            content: '';
+            background-image: linear-gradient(70deg, #0B698B, #9CD3D8);
+            position: absolute;
+            z-index: -1;
+            border-radius: 20% 30% 80% 10%;
+            filter: blur(100px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-10%, -50%);
+            transition: 1s;
         }
 
         .carousel .list {
             position: absolute;
-            width: 1140px;
-            max-width: 90%;
+            width: 1280px;
+            max-width: 100%;
             height: 80%;
             left: 50%;
             transform: translateX(-50%);
@@ -121,7 +136,7 @@
         }
 
         .carousel .list .item .introduce .des {
-            font-size: small;
+            font-size: 1.125rem;
             color: #5559;
         }
 
@@ -263,46 +278,12 @@
 
         .arrows {
             position: absolute;
-            width: 1140px;
-            max-width: 90%;
+            width: 100%;
+            max-width: 1280px;
             display: flex;
             justify-content: space-between;
             left: 50%;
             transform: translateX(-50%);
-        }
-
-        #prev,
-        #next {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-family: monospace;
-            border: 1px solid #5555;
-            font-size: large;
-            bottom: 20%;
-            left: 10%;
-        }
-
-        #next {
-            left: unset;
-            right: 10%;
-        }
-
-        #back {
-            position: absolute;
-            z-index: 100;
-            bottom: 0%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: none;
-            border-bottom: 1px solid #555;
-            font-family: Poppins;
-            font-weight: bold;
-            letter-spacing: 3px;
-            background-color: transparent;
-            padding: 10px;
-            /* opacity: 0; */
-            transition: opacity 0.5s;
         }
 
         @media screen and (max-width: 767px) {
@@ -539,7 +520,7 @@
     <!--Nutrisi Section -->
     <div class="overflow-hidden">
         <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-            <div class="mt-32">
+            <div class="relative">
                 <div class="carousel">
                     <div class="list">
                         <div class="item">
@@ -596,9 +577,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="arrows">
-                    <button id="prev">Prev</button>
-                    <button id="next">Next</button>
+                <div class="bottom-4 md:bottom-56 lg:bottom-44 arrows">
+                    <button id="prev"
+                        class="w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Prev</button>
+                    <button id="next"
+                        class="w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Next</button>
                 </div>
             </div>
         </section>
