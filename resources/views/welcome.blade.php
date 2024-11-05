@@ -115,15 +115,6 @@
             }
         }
 
-        /* .slider:hover .item {
-            animation-play-state: paused !important;
-            filter: grayscale(1);
-        }
-
-        .slider .item:hover {
-            filter: grayscale(0);
-        } */
-
         .slider[reverse="true"] .item {
             animation: reversePlay 40s linear infinite;
         }
