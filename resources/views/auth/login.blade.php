@@ -130,6 +130,11 @@
                         Continue with Google
                     </a>
                 </div>
+                <div class="text-sm text-center mt-5">
+                    <span class="">Don't have an account? </span>
+                    <a href="{{ route('register') }}" class="font-semibold text-primaryDark">Sign Up
+                    </a>
+                </div>
             </div>
         </div>
     </div>
