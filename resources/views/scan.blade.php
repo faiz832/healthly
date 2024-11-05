@@ -146,12 +146,15 @@
                                     x-transition:leave-end="transform opacity-0 -translate-x-full" style="display: none;"
                                     class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
                                     <!-- Modal Content -->
-                                    <div class="bg-white flex flex-col items-center rounded-lg shadow-lg w-[400px] p-6"
+                                    <div class="bg-white flex flex-col items-center rounded-lg shadow-lg w-[400px] py-12"
                                         @click.away="open = false">
-                                        <h2 class="text-2xl font-bold mt-6">Eits Harus Login dulu ya!</h2>
-                                        <div id="lottie-login"
-                                            class="w-full h-full aspect-[1/1] -my-8 filter drop-shadow-3xl">
-                                        </div>
+                                        <a href="{{ url('/') }}" class="flex gap-2">
+                                            <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                                                class="w-8 h-8">
+                                            <span class="text-2xl font-semibold mr-4">Healthly AI</span>
+                                        </a>
+                                        {{-- <div id="lottie-login" class="w-full h-full aspect-[1/1] -my-12 filter drop-shadow-3xl">
+                                        </div> --}}
                                         <div class="z-10 flex flex-col items-center gap-4 mb-4 w-[70%]">
                                             <a href="{{ url('/login') }}"
                                                 class="w-full justify-center py-2 px-4 border border-primary rounded-md shadow-sm text-sm font-medium text-primary hover:text-white bg-light hover:bg-primaryDark transition duration-300">
@@ -173,7 +176,7 @@
                                                 <hr>
                                             </div>
                                         </div>
-                                        <div class="mt-4 mb-6 w-[70%]">
+                                        <div class="mt-4 w-[70%]">
                                             <a href="{{ route('auth.google') }}"
                                                 class="flex items-center justify-center gap-2 px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-300">
                                                 <svg class="w-5 h-5" viewBox="0 0 24 24"

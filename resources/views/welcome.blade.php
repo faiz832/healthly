@@ -61,7 +61,6 @@
             }
         }
 
-
         .swing1-animation {
             animation: swing1 3s linear infinite;
         }
@@ -162,7 +161,7 @@
                 biar AI Assistant bantu kamu hitung nutrisi makanan dengan mudah!</p>
             <div class="">
                 <a href="{{ route('food.scan') }}"
-                    class="flex justify-center items-center h-12 px-6 bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">Mulai
+                    class="flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Mulai
                     Sekarang</a>
             </div>
         </div>
@@ -287,7 +286,7 @@
         </div>
     </section>
 
-    <!-- Features 1 Section -->
+    <!-- Information Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
         <div class="my-32">
             <div class="flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-4 xl:gap-8">
@@ -357,58 +356,13 @@
                         sehatmu dengan AI Assistant!
                     </p>
                     <a href="{{ route('food.scan') }}"
-                        class="mx-auto md:mx-0 flex justify-center items-center h-12 px-6 w-max bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">
-                        Try Now
+                        class="mx-auto md:mx-0 w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
+                        Coba Sekarang
                     </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Features 2 Section -->
-    {{-- <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-        <div class="mb-32 md:my-32">
-            <div class="flex flex-col lg:flex-row justify-center items-center gap-20 lg:gap-0 xl:gap-20">
-                <!-- Left Content Section -->
-                <div class="hidden md:block">
-                    <div class="ml-0 lg:mx-16 xl:mx-24 max-w-xl">
-                        <div class="relative flex items-center bg-primaryDark rounded-3xl drop-shadow-3xl">
-                            <img src="{{ asset('assets/images/avatar-1.png') }}" alt=""
-                                class="-mt-24 mb-12 w-full h-full max-h-[476px]">
-                            <div
-                                class="absolute top-34 -left-24 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-lg border font-bold shadow-xl">
-                                Makan Teratur
-                            </div>
-                            <div
-                                class="absolute bottom-24 -right-20 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold shadow-xl">
-                                Nutrisi Optimal
-                            </div>
-                            <div
-                                class="absolute top-8 -right-24 bg-white px-4 py-2 xl:px-8 xl:py-4 rounded-full text-sm border font-bold shadow-xl">
-                                Kesehatan Terjaga
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Image Grid Section -->
-                <div class="max-w-xl xl:max-w-2xl">
-                    <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                        Healthcare with AI<br>
-                        Connects Doctors
-                    </h1>
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Through Video Consultations, Patients Can Receive Expert Medical Advice, Diagnosis, And
-                        Treatment Recommendations Without The Need
-                    </p>
-                    <a href="{{ url('/upload') }}"
-                        class="flex justify-center items-center h-12 px-6 w-max bg-primaryDark hover:bg-primaryDark border border-primaryDark hover:border-primaryDark font-semibold text-white text-center transition duration-300 ease-in-out">
-                        Try Now
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 
     <!-- Testimonials Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
@@ -589,13 +543,9 @@
                 sehatmu dengan AI Assistant!
             </p>
             <div class="flex gap-4 items-center justify-center">
-                <a href="{{ route('login') }}"
-                    class="bg-[#f2f2f2] hover:bg-primaryDark py-2 px-4 font-semibold text-primaryDark hover:text-white text-center transition duration-300 ease-in-out">
-                    Log In
-                </a>
                 <a href="{{ route('register') }}"
-                    class="bg-primaryDark hover:bg-primaryDark py-2 px-4 font-semibold text-white text-center transition duration-300 ease-in-out">
-                    Sign Up
+                    class="flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
+                    Ayo Daftar
                 </a>
             </div>
         </div>

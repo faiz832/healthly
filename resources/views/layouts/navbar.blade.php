@@ -71,7 +71,7 @@
                             </div>
                         @else
                             <a href="{{ route('login') }}"
-                                class="rounded-full md:rounded-none bg-primaryDark md:bg-[#f2f2f2] hover:bg-primaryDark p-2 md:py-2 md:px-4 font-semibold text-primaryDark hover:text-white text-center transition duration-300 ease-in-out">
+                                class="rounded-full md:rounded-md bg-primaryDark md:bg-[#f2f2f2] hover:bg-primaryDark p-2 md:py-2 md:px-4 font-semibold text-primaryDark hover:text-white text-center transition duration-300 ease-in-out">
                                 <span class="hidden md:inline">Log In</span>
                                 <svg viewBox="0 0 24 24" fill="none" class="h-6 w-6 md:hidden"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@
 
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}"
-                                    class="hidden md:inline bg-primaryDark hover:bg-primaryDark py-2 px-4 font-semibold text-white text-center transition duration-300 ease-in-out">
+                                    class="hidden md:inline justify-center items-center px-4 py-2 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
                                     Sign Up
                                 </a>
                             @endif
