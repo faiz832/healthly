@@ -91,18 +91,19 @@
                         <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                     </div>
 
-                    <div class="flex items-center justify-between mb-4">
-                        <a class="text-sm text-blue-600 hover:underline" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
-                        </a>
-                    </div>
-
                     <div class="mb-4">
                         <x-primary-button
                             class="w-full justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primaryDark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                             {{ __('Register') }}
                         </x-primary-button>
                     </div>
+                    <div class="flex items-center justify-center mb-4">
+                        <span class="text-sm">Sudah punya akun? </span>
+                        <a href="{{ route('login') }}" class="text-sm font-semibold text-primaryDark hover:underline ml-2">
+                            {{ __('Log In') }}
+                        </a>
+                    </div>
+
                 </form>
             </div>
         </div>
