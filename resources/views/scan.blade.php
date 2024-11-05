@@ -18,9 +18,6 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Lottie CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
-
     <style>
         /* Hide scrollbar in Chrome, Safari and Opera */
         ::-webkit-scrollbar {
@@ -148,16 +145,16 @@
                                     <!-- Modal Content -->
                                     <div class="bg-white flex flex-col items-center rounded-lg shadow-lg w-[400px] py-12"
                                         @click.away="open = false">
-                                        <a href="{{ url('/') }}" class="flex gap-2">
-                                            <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                                                class="w-8 h-8">
-                                            <span class="text-2xl font-semibold mr-4">Healthly AI</span>
-                                        </a>
-                                        {{-- <div id="lottie-login" class="w-full h-full aspect-[1/1] -my-12 filter drop-shadow-3xl">
-                                        </div> --}}
+                                        <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
+                                            class="w-12 h-12">
+                                        <div class="w-[70%] text-center my-6">
+                                            <h1 class="text-2xl font-bold">Selamat Datang!
+                                            </h1>
+                                            <p class="text-gray-600">Silahkan login terlebih dahulu ya</p>
+                                        </div>
                                         <div class="z-10 flex flex-col items-center gap-4 mb-4 w-[70%]">
                                             <a href="{{ url('/login') }}"
-                                                class="w-full justify-center py-2 px-4 border border-primary rounded-md shadow-sm text-sm font-medium text-primary hover:text-white bg-light hover:bg-primaryDark transition duration-300">
+                                                class="w-full justify-center py-2 px-4 border border-primary rounded-md shadow-sm text-sm font-medium text-primary hover:text-white hover:bg-primaryDark transition duration-300">
                                                 Sign In
                                             </a>
                                             <a href="{{ url('/register') }}"
@@ -265,15 +262,6 @@
     </div>
 
     <script>
-        // Inisialisasi Lottie Animation
-        lottie.loadAnimation({
-            container: document.getElementById('lottie-login'), // ID dari elemen container Lottie
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: '{{ asset('assets/images/login_animation.json') }}' // Path ke file animasi JSON
-        });
-
         // Function to show the selected file name
         function showFileName() {
             const fileInput = document.getElementById('fileInput');
