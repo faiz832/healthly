@@ -486,15 +486,22 @@
             <!-- Content -->
             <div class="my-24">
                 <div
-                    class="mx-auto aspect-[0.85] w-full overflow-hidden px-20 pt-12 bg-primaryDark rounded-3xl
-                            md:aspect-[1.22] md:px-40 md:pt-20 
+                    class="mx-auto aspect-[0.75] w-full overflow-hidden px-20 pt-12 bg-primaryDark rounded-3xl
+                            md:aspect-[1.9] md:px-20 md:pt-20 
                             lg:aspect-[1.9] lg:px-24 lg:pt-24
                             min-[1536px]:w-[min(80vw,1920px)] drop-shadow-dark">
                     <div class="relative h-full w-full overflow-hidden">
-                        <video class="h-full w-full select-none rounded-t-2xl object-cover object-left-top" autoplay
-                            muted loop playsinline disablepictureinpicture disableremoteplayback
+                        <video
+                            class="hidden md:flex h-full w-full select-none rounded-t-2xl object-cover object-left-top"
+                            autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
                             poster="https://bytescale.mobbin.com/FW25bBB/image/assets/videos/lp_flow_video_demo_v1.mp4?t=0">
-                            <source type="video/mp4" src="{{ asset('assets/video/demo.webm') }}">
+                            <source type="video/mp4" src="{{ asset('assets/videos/demo-desktop.mp4') }}">
+                        </video>
+                        <video
+                            class="flex md:hidden h-full w-full select-none rounded-t-2xl object-cover object-left-top"
+                            autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
+                            poster="https://bytescale.mobbin.com/FW25bBB/image/assets/videos/lp_flow_video_demo_v1.mp4?t=0">
+                            <source type="video/mp4" src="{{ asset('assets/videos/demo-mobile.mp4') }}">
                         </video>
                     </div>
                 </div>
