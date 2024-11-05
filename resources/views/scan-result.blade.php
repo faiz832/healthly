@@ -33,11 +33,11 @@
 
         <!-- Page Content -->
         <div class="max-w-[1200px] mx-auto mt-12 min-h-screen p-4">
-            <div class="mt-16">
-                <div class="w-full max-w-4xl mx-auto p-4 border border-gray-300 rounded-3xl shadow-2xl">
-                    <div class="flex gap-6">
+            <div class="md:mt-16">
+                <div class="w-full sm:w-3/5 lg:w-max mx-auto p-4 border border-gray-300 rounded-3xl shadow-2xl">
+                    <div class="flex flex-col lg:flex-row gap-6">
                         <!-- Image Section -->
-                        <div class="space-y-4 w-2/5 h-80">
+                        <div class="space-y-4 w-full lg:w-2/5 h-80">
                             <div class="w-full h-full rounded-2xl overflow-hidden shadow-lg">
                                 <img src="{{ $imagePath }}" alt="Analyzed Image"
                                     class="w-full h-full object-cover object-center">
@@ -45,7 +45,7 @@
                         </div>
 
                         <!-- Analysis Result Section -->
-                        <div class="flex flex-col justify-between w-3/5 max-w-md my-2">
+                        <div class="flex flex-col gap-4 lg:justify-between w-full max-w-md my-2">
                             <div class="space-y-4 w-full">
                                 <h1 class="text-3xl font-bold">Hasil analisis AI Assistant</h1>
                                 <div class="">
@@ -57,7 +57,7 @@
                                     class="flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
                                     Scan gambar lain
                                 </a>
-                                <span class="text-sm text-gray-500 ml-auto">
+                                <span class="text-sm text-gray-500 ml-auto mr-2">
                                     Token tersisa: {{ auth()->user()->ai_token }}
                                 </span>
                             </div>

@@ -494,8 +494,7 @@
                         <video class="h-full w-full select-none rounded-t-2xl object-cover object-left-top" autoplay
                             muted loop playsinline disablepictureinpicture disableremoteplayback
                             poster="https://bytescale.mobbin.com/FW25bBB/image/assets/videos/lp_flow_video_demo_v1.mp4?t=0">
-                            <source type="video/mp4"
-                                src="https://bytescale.mobbin.com/FW25bBB/video/assets/videos/lp_flow_video_demo_v1.mp4?mute=true&f=mp4-h264&a=/video.mp4">
+                            <source type="video/mp4" src="{{ asset('assets/video/demo.webm') }}">
                         </video>
                     </div>
                 </div>
