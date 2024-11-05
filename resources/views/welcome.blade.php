@@ -16,13 +16,9 @@
         rel="stylesheet">
 
     <!-- Styles -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/carousel.css', 'resources/js/app.js', 'resources/js/carousel.js'])
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
         /* Hide scrollbar in Chrome, Safari and Opera */
         ::-webkit-scrollbar {
             display: none;
@@ -235,56 +231,72 @@
     </div>
 
     <!--Nutrisi Section -->
-    <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-        <div class="mt-32">
-            <div class="flex flex-col justify-center items-center gap-8">
-                <h1 class="text-5xl font-bold text-center">Capai Nutrisi Seimbang</h1>
-                <p class="text-lg text-gray-600 text-center max-w-xl">Yuk, temukan ragam nutrisi yang pas buat
-                    kamu!
-                    Kami bantu
-                    hitung kebutuhan nutrisimu biar nggak ada yang
-                    kurang</p>
+    <div class="overflow-hidden">
+        <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+            <div class="mt-32">
+                <div class="carousel">
+                    <div class="list">
+                        <div class="item">
+                            <img src="{{ asset('assets/images/img3d-1.png') }}">
+                            <div class="introduce">
+                                <div class="title">Makanan Sehat</div>
+                                <div class="topic">Aerphone</div>
+                                <div class="des">
+                                    <!-- 20 lorem -->
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
+                                    dignissimos
+                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset('assets/images/img3d-1.png') }}">
+                            <div class="introduce">
+                                <div class="title">Hidup Sehat</div>
+                                <div class="topic">Aerphone</div>
+                                <div class="des">
+                                    <!-- 20 lorem -->
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
+                                    dignissimos
+                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset('assets/images/img3d-1.png') }}">
+                            <div class="introduce">
+                                <div class="title">Nutrisi Tercukupi</div>
+                                <div class="topic">Aerphone</div>
+                                <div class="des">
+                                    <!-- 20 lorem -->
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
+                                    dignissimos
+                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="{{ asset('assets/images/img3d-1.png') }}">
+                            <div class="introduce">
+                                <div class="title">Sehat Walafiat</div>
+                                <div class="topic">Aerphone</div>
+                                <div class="des">
+                                    <!-- 20 lorem -->
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, laborum cumque
+                                    dignissimos
+                                    quidem atque et eligendi aperiam voluptates beatae maxime.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrows">
+                    <button id="prev">Prev</button>
+                    <button id="next">Next</button>
+                </div>
             </div>
-            <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
-                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                        class="w-16 h-16 rounded-full object-cover object-center">
-                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
-                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
-                </div>
-                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
-                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                        class="w-16 h-16 rounded-full object-cover object-center">
-                    <h1 class="text-xl font-bold">Protein Berkualitas</h1>
-                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
-                </div>
-                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
-                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                        class="w-16 h-16 rounded-full object-cover object-center">
-                    <h1 class="text-xl font-bold">Lemak Sehat</h1>
-                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
-                </div>
-                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
-                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                        class="w-16 h-16 rounded-full object-cover object-center">
-                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
-                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
-                </div>
-                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
-                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                        class="w-16 h-16 rounded-full object-cover object-center">
-                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
-                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
-                </div>
-                <div class="flex flex-col gap-4 p-5 rounded-3xl border border-gray-300">
-                    <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
-                        class="w-16 h-16 rounded-full object-cover object-center">
-                    <h1 class="text-xl font-bold">Karbohidrat Seimbang</h1>
-                    <p class="text-gray-600">Karbohidrat berperan sebagai sumber energi utama.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <!-- Information Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
