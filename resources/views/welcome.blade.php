@@ -665,7 +665,7 @@
 
     <!-- Testimonials Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-        <h1 class="text-5xl font-bold text-center">Pengalaman dari Mereka</h1>
+        <h1 class="text-5xl font-bold text-center">Apa Kata Mereka</h1>
         <div class="relative flex flex-col flex-wrap mt-24 gap-8">
             <div class="w-full max-w-[1280px] mb-12 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8">
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">

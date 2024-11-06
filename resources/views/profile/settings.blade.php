@@ -1,3 +1,4 @@
+<title>Settings - Healthly AI</title>
 <x-app-layout>
     <div class="flex">
         <div class="w-[1280px] relative flex items-start mx-auto p-4 py-6 lg:py-8 gap-8">
