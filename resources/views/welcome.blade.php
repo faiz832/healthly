@@ -297,6 +297,13 @@
             }
         }
 
+        @media (min-width: 767px) and (max-width: 1024px) {
+            .carousel .list .item:nth-child(2) .introduce {
+                width: 45%;
+            }
+        }
+
+
         /* Swing 1: Berlawanan arah jarum jam */
         @keyframes swing1 {
             0% {
@@ -542,7 +549,7 @@
                         <div class="item">
                             <img src="{{ asset('assets/images/img3d-3.png') }}">
                             <div class="introduce">
-                                <div class="topic">Temukan Gizi Makanan</div>
+                                <div class="topic">Dapatkan Gizi Cepat</div>
                                 <div class="des">
                                     Dapatkan info nutrisi lengkap dari makananmu. Ideal untuk hidup sehat, diet, dan
                                     menjaga pola makan seimbang.
@@ -552,7 +559,7 @@
                         <div class="item">
                             <img src="{{ asset('assets/images/img3d-4.png') }}">
                             <div class="introduce">
-                                <div class="topic">Analisis Cepat Makananmu</div>
+                                <div class="topic">Pantau Nutrisi Harian</div>
                                 <div class="des">
                                     Foto, unggah, dan lihat data nutrisi makananmu dalam detik. Solusi tepat untuk
                                     pantau gizi harian!
