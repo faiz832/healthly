@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('email')->unique();
             $table->string('avatar')->nullable();
-            $table->integer('ai_token')->default(1);
+            $table->integer('ai_token')->default(5);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

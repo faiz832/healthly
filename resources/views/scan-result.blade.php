@@ -37,7 +37,7 @@
                 <div class="w-full sm:w-3/5 lg:w-max mx-auto p-4 border border-gray-300 rounded-3xl shadow-2xl">
                     <div class="flex flex-col lg:flex-row gap-6">
                         <!-- Image Section -->
-                        <div class="space-y-4 w-full lg:w-2/5 h-80">
+                        <div class="space-y-4 w-full lg:w-2/5 aspect-[1.1] h-80">
                             <div class="w-full h-full rounded-2xl overflow-hidden shadow-lg">
                                 <img src="{{ $imagePath }}" alt="Analyzed Image"
                                     class="w-full h-full object-cover object-center">
@@ -70,6 +70,58 @@
         <!-- Footer -->
         @include('layouts.footer')
     </div>
+
+    <!-- Import library canvas-confetti dari CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fungsi untuk menjalankan efek confetti
+            function startConfetti() {
+                // Konfetti dari kiri bawah
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: {
+                        x: 0,
+                        y: 0.9
+                    }
+                });
+
+                // Konfetti dari kanan bawah
+                confetti({
+                    particleCount: 100,
+                    spread: 70,
+                    origin: {
+                        x: 1,
+                        y: 0.9
+                    }
+                });
+            }
+
+            // Jalankan efek confetti
+            startConfetti();
+
+            // Optional: Tambahkan konfetti kedua setelah delay
+            setTimeout(() => {
+                confetti({
+                    particleCount: 50,
+                    angle: 60,
+                    spread: 55,
+                    origin: {
+                        x: 0
+                    }
+                });
+                confetti({
+                    particleCount: 50,
+                    angle: 120,
+                    spread: 55,
+                    origin: {
+                        x: 1
+                    }
+                });
+            }, 500);
+        });
+    </script>
 </body>
 
 </html>

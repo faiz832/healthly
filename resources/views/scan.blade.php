@@ -229,12 +229,12 @@
                                 </figure>
                             </div>
                         </button>
-                        <button onclick="selectImage('{{ asset('assets/images/meal-3.jpg') }}')"
+                        <button onclick="selectImage('{{ asset('assets/images/meal-4.jpeg') }}')"
                             class="rounded-lg overflow-hidden select-none shrink-0 relative focus:outline-none focus:ring focus:ring-primary transition ease-in-out active:scale-[0.98]">
                             <div class="w-full h-full hover:opacity-80 active:opacity-60">
                                 <figure class="m-0 h-12 w-12 sm:h-16 sm:w-16">
                                     <picture>
-                                        <img src="{{ asset('assets/images/meal-3.jpg') }}" alt="Example image"
+                                        <img src="{{ asset('assets/images/meal-4.jpeg') }}" alt="Example image"
                                             class="w-full h-full object-cover object-center" loading="lazy"
                                             draggable="false">
                                     </picture>
