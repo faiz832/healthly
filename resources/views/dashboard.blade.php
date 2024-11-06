@@ -13,11 +13,11 @@
                 </div>
 
                 <!-- BMI -->
-                <div class="bg-primary/70 mt-4 rounded-lg p-6 shadow border border-gray-200">
+                <div class="overflow-hidden bg-primary/70 mt-4 rounded-lg p-6 shadow border border-gray-200">
                     <h2 class="font-semibold text-white">Body Mass Index Kamu</h2>
 
                     @forelse ($bmis as $bmi)
-                        <div class="mt-4 grid grid-cols-2 md:grid-cols-5 gap-4">
+                        <div class="relative mt-4 grid grid-cols-2 md:grid-cols-5 gap-4">
                             <div class="">
                                 <p class="text-sm font-semibold mb-2 text-white">Tinggi</p>
                                 <div class="bg-primary p-4 rounded-lg">
@@ -42,11 +42,9 @@
                                     <p class="font-bold text-white">{{ $bmi->category }}</p>
                                 </div>
                             </div>
-                            <div class="mt-auto">
-                                <a href="{{ route('bmi.create') }}"
-                                    class="inline-block w-full text-center p-4 rounded-lg text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Hitung
-                                    BMI
-                                </a>
+                            <div class="hidden md:flex absolute -top-8 right-0">
+                                <img src="{{ asset('assets/images/dashboard-illustration.png') }}"
+                                    alt="image by iconscout" class="h-52 w-52">
                             </div>
                         </div>
                         <div class="mt-6">

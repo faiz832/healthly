@@ -494,13 +494,13 @@
                         <video
                             class="hidden md:flex h-full w-full select-none rounded-t-2xl object-cover object-left-top"
                             autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
-                            poster="{{ asset('assets/images/poster.png') }}">
+                            poster="{{ asset('assets/images/poster-desktop.png') }}">
                             <source type="video/mp4" src="{{ asset('assets/videos/demo-desktop.mp4') }}">
                         </video>
                         <video
                             class="flex md:hidden h-full w-full select-none rounded-t-2xl object-cover object-left-top"
                             autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
-                            poster="{{ asset('assets/images/poster.png') }}">
+                            poster="{{ asset('assets/images/poster-mobile.jpg') }}">
                             <source type="video/mp4" src="{{ asset('assets/videos/demo-mobile.mp4') }}">
                         </video>
                     </div>

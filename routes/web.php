@@ -10,6 +10,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/scan', [FoodScanController::class, 'index'])->name('food.scan');
+Route::get('/terms', function () {
+    return view('terms');
+});
+Route::get('/privacy', function () {
+    return view('privacy');
+});
 
 Route::middleware('auth')->group(function () {
     // food scan route
