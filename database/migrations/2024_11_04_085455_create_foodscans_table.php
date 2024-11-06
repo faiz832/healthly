@@ -13,8 +13,9 @@ return new class extends Migration {
         Schema::create('foodscans', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('gambar');
-            $table->text('analisis');
+            $table->string('foodImage');
+            $table->text('analysis');
+            $table->text('formattedAnalysis');
             $table->timestamps();
 
             // Foreign key constraint untuk user_id

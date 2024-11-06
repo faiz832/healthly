@@ -43,12 +43,12 @@
                                     <td class="px-4 py-4 whitespace-nowrap">
                                         <div class="flex items-center justify-center">
                                             <img class="h-10 w-10 object-cover rounded"
-                                                src="{{ Storage::url($food->gambar) }}" alt="makanan kamu"
+                                                src="{{ Storage::url($food->foodImage) }}" alt="makanan kamu"
                                                 loading="lazy" />
                                         </div>
                                     </td>
                                     <td class="px-4 py-4 whitespace-normal text-sm text-gray-900">
-                                        {{ $food->analisis }}
+                                        {{ $food->analysis }}
                                     </td>
                                     <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
                                         {{ $food->created_at->format('d-m-Y') }}

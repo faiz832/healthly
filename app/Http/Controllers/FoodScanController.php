@@ -100,30 +100,45 @@ class FoodScanController extends Controller
                 return back()->withErrors('Tidak ada hasil. Silakan coba lagi.');
             }
 
+            $formattedResult = $this->formatResult($resultText);
+
             // Save the scan result to the database
-            Foodscan::create([
+            $scan = Foodscan::create([
                 'user_id' => $user->id,
-                'gambar' => $imagePath, // local
-                // 'gambar' => basename($imageTempPath), // vercel
-                'analisis' => $resultText,
+                'foodImage' => $imagePath, // local
+                // 'foodImage' => basename($imageTempPath), // vercel
+                'analysis' => $resultText,
+                'formattedAnalysis' => $formattedResult
             ]);
 
             // Reduce the user's token by 1
             $user->ai_token -= 1;
             $user->save();
 
-            $formattedResult = $this->formatResult($resultText);
+            // Redirect ke halaman hasil dengan ID scan
+            return redirect()->route('scan.show', $scan->id);
 
-            return view('scan-result', [
-                'result' => $formattedResult,
-                'imagePath' => Storage::url($imagePath), // local
-                // 'imagePath' => url('uploads/' . basename($imageTempPath)) // vercel
-            ]);
         } catch (\Exception $e) {
             Log::error('Error processing the file: ' . $e->getMessage());
             Log::error('Error details: ' . $e->getTraceAsString());
             return back()->withErrors('Error memproses file. Silakan coba lagi.');
         }
+    }
+
+    // Menampilkan hasil scan dari database
+    public function show($id)
+    {
+        $scan = Foodscan::findOrFail($id);
+
+        // Pastikan user hanya bisa melihat scan miliknya
+        if ($scan->user_id !== auth()->id()) {
+            abort(403);
+        }
+
+        return view('scan-result', [
+            'result' => $scan->formattedAnalysis,
+            'imagePath' => Storage::url($scan->foodImage),
+        ]);
     }
 
     private function formatResult(string $text): string

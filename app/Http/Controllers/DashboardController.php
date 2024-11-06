@@ -11,7 +11,7 @@ class DashboardController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $foods = Foodscan::where('user_id', $user->id)->get();
+        $foods = Foodscan::where('user_id', $user->id)->latest()->get();
 
         return view('dashboard', compact('user', 'foods'));
     }

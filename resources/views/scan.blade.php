@@ -106,7 +106,7 @@
                                         </span>
                                         <span id="buttonText">Scan Now</span>
                                     </button>
-                                    <p class="text-sm text-gray-600">Your Token: {{ Auth::user()->ai_token ?? '0' }}
+                                    <p class="text-sm text-gray-600">Token Kamu: {{ Auth::user()->ai_token ?? '0' }}
                                     </p>
                                 </form>
                             </div>

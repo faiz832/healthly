@@ -9,7 +9,7 @@ class Foodscan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'gambar', 'analisis'];
+    protected $fillable = ['user_id', 'foodImage', 'analysis', 'formattedAnalysis'];
 
     // Relasi ke model User
     public function user()

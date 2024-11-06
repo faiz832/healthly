@@ -11,7 +11,9 @@ Route::get('/', function () {
 Route::get('/scan', [FoodScanController::class, 'index'])->name('food.scan');
 
 Route::middleware('auth')->group(function () {
+    // Route::post('/scan/result', [FoodScanController::class, 'scan'])->name('scan.result');
     Route::post('/scan/result', [FoodScanController::class, 'scan'])->name('scan.result');
+    Route::get('/scan/{id}', [FoodScanController::class, 'show'])->name('scan.show');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
