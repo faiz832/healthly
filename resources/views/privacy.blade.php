@@ -17,6 +17,13 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        /* Hide scrollbar in Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased">
@@ -37,44 +44,45 @@
                                 [
                                     'title' => 'Data Collection',
                                     'content' =>
-                                        'We collect personal information such as your name, email address, and payment details when you register, subscribe, or use our services. This information is essential for account management and improving your experience.',
+                                        'Kami mengumpulkan informasi pribadi seperti nama, alamat email, dan detail pembayaran saat kamu mendaftar, berlangganan, atau menggunakan layanan kami. Informasi ini penting untuk manajemen akun dan meningkatkan pengalamanmu.',
                                 ],
                                 [
                                     'title' => 'Use of Data',
                                     'content' =>
-                                        'Your data is used to provide and enhance the services you request, including course access, CV optimization, and personalized recommendations.',
+                                        'Datamu digunakan untuk menyediakan dan meningkatkan layanan yang kamu minta, termasuk akses kursus, optimalisasi CV, dan rekomendasi yang dipersonalisasi.',
                                 ],
                                 [
                                     'title' => 'Data Sharing',
                                     'content' =>
-                                        'We do not share your personal information with third parties, except when required by law or to provide essential services (e.g., payment processing).',
+                                        'Kami tidak membagikan informasi pribadi kamu dengan pihak ketiga, kecuali jika diwajibkan oleh hukum atau untuk menyediakan layanan penting (misalnya, pemrosesan pembayaran).',
                                 ],
                                 [
                                     'title' => 'Cookies',
                                     'content' =>
-                                        'Healthly AI uses cookies to track user sessions, preferences, and improve platform functionality. You can disable cookies in your browser settings, but this may affect the platform\'s usability.',
+                                        'Healthly AI menggunakan cookies untuk melacak sesi pengguna, preferensi, dan meningkatkan fungsionalitas platform. Kamu dapat menonaktifkan cookies di pengaturan browser, tetapi hal ini dapat memengaruhi kegunaan platform.',
                                 ],
                                 [
                                     'title' => 'Data Security',
                                     'content' =>
-                                        'We implement security measures to protect your personal data from unauthorized access. However, no system is 100% secure, and we cannot guarantee absolute protection.',
+                                        'Kami menerapkan langkah-langkah keamanan untuk melindungi data pribadi kamu dari akses yang tidak sah. Namun, tidak ada sistem yang 100% aman, dan kami tidak dapat menjamin perlindungan mutlak.',
                                 ],
                                 [
                                     'title' => 'Third-Party Links',
                                     'content' =>
-                                        'Our platform may include links to third-party websites. Healthly AI is not responsible for the privacy practices or content of these external sites.',
+                                        'Platform kami mungkin menyertakan tautan ke situs web pihak ketiga. Healthly AI tidak bertanggung jawab atas praktik privasi atau konten situs eksternal ini.',
                                 ],
                                 [
                                     'title' => 'Your Rights',
                                     'content' =>
-                                        'You have the right to access, correct, or delete your personal data at any time. Contact us if you wish to make changes to your account information.',
+                                        'Kamu memiliki hak untuk mengakses, memperbaiki, atau menghapus data pribadi kamu kapan saja. Hubungi kami jika kamu ingin mengubah informasi akunmu.',
                                 ],
                                 [
                                     'title' => 'Changes to Privacy Policy',
                                     'content' =>
-                                        'Healthly AI reserves the right to modify this privacy policy. Any changes will be communicated to users via email or through platform updates.',
+                                        'Healthly AI berhak untuk mengubah kebijakan privasi ini. Setiap perubahan akan diberitahukan kepada pengguna melalui email atau pembaruan platform.',
                                 ],
                             ];
+
                         @endphp
 
                         <div class="space-y-6">

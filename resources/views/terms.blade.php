@@ -17,6 +17,13 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <style>
+        /* Hide scrollbar in Chrome, Safari and Opera */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased">
@@ -37,42 +44,42 @@
                                 [
                                     'title' => 'Acceptance of Terms',
                                     'content' =>
-                                        'By accessing and using the Healthly AI platform, you agree to comply with these terms. If you do not agree, please refrain from using the platform.',
+                                        'Dengan mengakses dan menggunakan platform Healthly AI, kamu setuju untuk mematuhi syarat-syarat ini. Jika kamu tidak setuju, harap hentikan penggunaan platform ini.',
                                 ],
                                 [
                                     'title' => 'Use of Services',
                                     'content' =>
-                                        'You may use our services for lawful purposes only. Misuse of the platform, including hacking, violating privacy, or using it for fraudulent purposes, is strictly prohibited.',
+                                        'Kamu hanya boleh menggunakan layanan kami untuk tujuan yang sah. Penyalahgunaan platform, termasuk peretasan, pelanggaran privasi, atau penggunaannya untuk tujuan penipuan, dilarang keras.',
                                 ],
                                 [
                                     'title' => 'Account Registration',
                                     'content' =>
-                                        'You are required to provide accurate and up-to-date information when registering an account. You are responsible for maintaining the security of your account and password.',
+                                        'Kamu diharuskan memberikan informasi yang akurat dan terkini saat mendaftarkan akun. Kamu bertanggung jawab untuk menjaga keamanan akun dan kata sandimu.',
                                 ],
                                 [
                                     'title' => 'Subscription Plans',
                                     'content' =>
-                                        'Access to premium features requires a subscription. Pricing and benefits are clearly outlined during registration. Subscriptions renew automatically unless canceled before the renewal date.',
+                                        'Akses ke fitur premium memerlukan langganan. Harga dan manfaat dijelaskan dengan jelas saat pendaftaran. Langganan akan diperpanjang otomatis kecuali dibatalkan sebelum tanggal perpanjangan.',
                                 ],
                                 [
                                     'title' => 'Refunds and Cancellations',
                                     'content' =>
-                                        'We offer no refunds for subscription payments. You may cancel your subscription at any time, and it will remain active until the end of the billing cycle.',
+                                        'Kami tidak menyediakan pengembalian dana untuk pembayaran langganan. Kamu dapat membatalkan langganan kapan saja, dan langganan akan tetap aktif hingga akhir siklus penagihan.',
                                 ],
                                 [
                                     'title' => 'Content Ownership',
                                     'content' =>
-                                        'All content, courses, and materials provided on the platform are owned by Healthly AI or our licensors. Unauthorized reproduction or distribution is prohibited.',
+                                        'Semua konten, kursus, dan materi yang disediakan di platform dimiliki oleh Healthly AI atau pemberi lisensi kami. Reproduksi atau distribusi tanpa izin dilarang.',
                                 ],
                                 [
                                     'title' => 'Modification of Terms',
                                     'content' =>
-                                        'Healthly AI reserves the right to update or modify these terms at any time. Changes will be effective upon posting, and continued use of the platform implies acceptance of the revised terms.',
+                                        'Healthly AI berhak untuk memperbarui atau mengubah syarat-syarat ini kapan saja. Perubahan akan berlaku setelah diposting, dan penggunaan platform secara terus-menerus berarti kamu menerima syarat-syarat yang diperbarui.',
                                 ],
                                 [
                                     'title' => 'Termination',
                                     'content' =>
-                                        'Healthly AI may terminate or suspend your account if you violate any of these terms. Termination may result in loss of access to content and services.',
+                                        'Healthly AI dapat mengakhiri atau menangguhkan akunmu jika kamu melanggar salah satu dari syarat-syarat ini. Pengakhiran mungkin mengakibatkan kehilangan akses ke konten dan layanan.',
                                 ],
                             ];
                         @endphp
