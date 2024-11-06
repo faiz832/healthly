@@ -1,3 +1,4 @@
+<title>BMI - Healthly AI</title>
 <x-app-layout>
     <div class="flex">
         <div class="w-full max-w-[1280px] relative flex items-start mx-auto p-4 py-6 lg:py-8 gap-8">
@@ -6,7 +7,7 @@
             <!-- Main Content -->
             <div class="w-full lg:w-5/6 min-h-screen">
                 <div class="space-y-6">
-                    <h2 class="text-2xl font-semibold text-gray-800">
+                    <h2 class="text-2xl font-semibold">
                         Input BMI
                     </h2>
 
