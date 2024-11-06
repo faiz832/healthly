@@ -421,53 +421,20 @@
     @include('layouts.navbar')
 
     <!-- Hero Section -->
-    <section id="hero" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8 min-h-screen">
-        <div class="hero-title hidden flex-col items-center my-20 gap-12">
+    <section id="hero" class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8 h-screen -mt-[70px]">
+        <div class="hero-title hidden h-full flex-col justify-center items-center gap-12">
             <h1
-                class="text-6xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
-                Healthly with AI Assistant</h1>
-            <p class="text-xl text-gray-600 max-w-4xl text-center">Mau coba gaya hidup sehat yang gak ribet? Yuk,
-                biar AI Assistant bantu kamu hitung nutrisi makanan dengan mudah!</p>
+                class="max-w-4xl text-6xl md:text-7xl xl:text-8xl text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-primaryDark via-secondary to-primary py-2">
+                Start Your Health Journey!</h1>
+            <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-lg lg:max-w-3xl text-center">Mau coba gaya
+                hidup sehat yang
+                gak ribet?
+                Yuk,
+                biar Healthly AI bantu kamu hitung nutrisi makanan dengan mudah!</p>
             <div class="">
                 <a href="{{ route('food.scan') }}"
                     class="flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Mulai
                     Sekarang</a>
-            </div>
-        </div>
-        <div class="hero-partners hidden flex-col items-center mb-14">
-            <p class="text-gray-600">Dipercaya oleh</p>
-            <div class="flex gap-4 md:gap-8 lg:gap-12 mt-8">
-                <!-- Bungkus setiap logo dalam div dengan aspect-ratio -->
-                <div class="flex aspect-[6/1] items-center justify-center">
-                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="Logo Halodoc">
-                </div>
-                <div class="flex aspect-[6/1] items-center justify-center">
-                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="Logo Alodokter">
-                </div>
-                <div class="flex aspect-[6/1] items-center justify-center">
-                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="Logo Sehatku">
-                </div>
-
-                <!-- Gambar keempat, hanya tampil di sm ke atas -->
-                <div class="hidden sm:flex aspect-[6/1] items-center justify-center">
-                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="Logo Keluarga Sehat">
-                </div>
-
-                <!-- Gambar kelima, hanya tampil di md ke atas -->
-                <div class="hidden md:flex aspect-[6/1] items-center justify-center">
-                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="Logo HealthConnect">
-                </div>
-
-                <!-- Gambar keenam, hanya tampil di lg ke atas -->
-                <div class="hidden lg:flex aspect-[6/1] items-center justify-center">
-                    <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
-                        src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="Logo Healthcare">
-                </div>
             </div>
         </div>
     </section>
@@ -475,6 +442,43 @@
     <!-- Demo Section -->
     <div class="overflow-hidden">
         <section id="demo" class="relative max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
+            <div class="flex flex-col items-center mb-24">
+                <p class="text-gray-600">Dipercaya oleh</p>
+                <div class="flex gap-4 md:gap-8 lg:gap-12 mt-8">
+                    <!-- Bungkus setiap logo dalam div dengan aspect-ratio -->
+                    <div class="flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_halodoc.png') }}" alt="Logo Halodoc">
+                    </div>
+                    <div class="flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_alodokter.png') }}" alt="Logo Alodokter">
+                    </div>
+                    <div class="flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_sehatku.png') }}" alt="Logo Sehatku">
+                    </div>
+
+                    <!-- Gambar keempat, hanya tampil di sm ke atas -->
+                    <div class="hidden sm:flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_keluargasehat.png') }}" alt="Logo Keluarga Sehat">
+                    </div>
+
+                    <!-- Gambar kelima, hanya tampil di md ke atas -->
+                    <div class="hidden md:flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_healthconnect.png') }}" alt="Logo HealthConnect">
+                    </div>
+
+                    <!-- Gambar keenam, hanya tampil di lg ke atas -->
+                    <div class="hidden lg:flex aspect-[6/1] items-center justify-center">
+                        <img class="w-32 filter grayscale hover:filter-none transition-all duration-300"
+                            src="{{ asset('assets/icons/logo_healthcare.png') }}" alt="Logo Healthcare">
+                    </div>
+                </div>
+            </div>
+
             <!-- Background Decoration -->
             <div class="absolute top-0 -left-40 z-[-1]">
                 <img src="{{ asset('assets/images/decoration-1.png') }}" alt="" class="w-[354px] h-[363px]">
@@ -484,7 +488,7 @@
             </div>
 
             <!-- Content -->
-            <div class="my-24">
+            <div class="mb-24">
                 <div
                     class="mx-auto aspect-[0.75] w-full overflow-hidden px-20 pt-12 bg-primaryDark rounded-3xl
                             md:aspect-[1.9] md:px-20 md:pt-20 
