@@ -29,9 +29,9 @@
             <div
                 class="relative z-10 bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm rounded p-12 lg:px-12 lg:py-24">
                 <div class="text-white max-w-lg">
-                    <h1 class="text-4xl lg:text-6xl font-bold mb-8">Digital platform for developer careers.</h1>
-                    <p class="text-sm lg:text-lg w-3/4">Improve your tech skills and career prospects with our
-                        AI-powered platform
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-8">Analisis Makanan Instan dengan AI Assistant.</h1>
+                    <p class="text-sm lg:text-lg w-3/4">Biarkan AI membantu mengelola nutrisi kamu dengan mudah untuk
+                        gaya hidup yang lebih sehat hanya dengan mengunggah foto saja.
                     </p>
                 </div>
             </div>
@@ -55,7 +55,7 @@
 
                 <div class="mb-8">
                     <h2 class="mt-4 text-4xl font-bold">Log In</h2>
-                    <p class="mt-2 text-gray-600">Hey, Welcome Back!</p>
+                    <p class="mt-2 text-gray-600">Selamat Datang Kembali!</p>
                 </div>
 
                 <form method="POST" action="{{ route('login') }}">
@@ -131,8 +131,9 @@
                     </a>
                 </div>
                 <div class="text-sm text-center mt-5">
-                    <span class="">Don't have an account? </span>
-                    <a href="{{ route('register') }}" class="font-semibold text-primaryDark">Sign Up
+                    <span class="">Belum punya akun ya? </span>
+                    <a href="{{ route('register') }}" class="font-semibold text-primaryDark hover:underline">Sign
+                        Up
                     </a>
                 </div>
             </div>
