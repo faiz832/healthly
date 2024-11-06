@@ -55,7 +55,7 @@
                     @empty
                         <div class="text-center py-8">
                             <p class="text-white">Kamu belum melakukan perhitungan BMI.</p>
-                            <a href="{{ route('bmi.create') }}"
+                            <a href="{{ route('bmi.index') }}"
                                 class="mt-4 inline-block px-4 py-2 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Hitung
                                 BMI</a>
                         </div>

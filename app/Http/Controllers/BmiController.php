@@ -16,12 +16,6 @@ class BmiController extends Controller
         return view('bmi.index', compact('bmis'));
     }
 
-    public function create()
-    {
-        // Menampilkan form input BMI
-        return view('bmi.create');
-    }
-
     public function store(Request $request)
     {
         // Validasi input

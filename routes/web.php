@@ -24,7 +24,6 @@ Route::middleware('auth')->group(function () {
 
     // BMI route
     Route::get('/bmi', [BmiController::class, 'index'])->name('bmi.index');
-    Route::get('/bmi/create', [BmiController::class, 'create'])->name('bmi.create');
     Route::post('/bmi', [BmiController::class, 'store'])->name('bmi.store');
 
     // dashboard route
