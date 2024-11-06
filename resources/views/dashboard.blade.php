@@ -41,7 +41,7 @@
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            @foreach ($foods as $food)
+                            @forelse ($foods as $food)
                                 <tr>
                                     <td class="px-4 py-4 whitespace-nowrap text-sm">{{ $loop->iteration }}</td>
                                     <td class="px-4 py-4 whitespace-nowrap">
@@ -82,7 +82,14 @@
                                         </a>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="5"
+                                        class="px-4 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                                        Oops! Kamu belum melakukan scan sebelumnya
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

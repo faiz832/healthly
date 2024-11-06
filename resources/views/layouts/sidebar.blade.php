@@ -18,6 +18,20 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('bmi.index') }}"
+                    class="flex items-center {{ Route::is('bmi.index') || Route::is('bmi.create') ? 'text-primary relative' : 'text-slate-900' }}">
+                    @if (Route::is('bmi.index') || Route::is('bmi.create'))
+                        <div class="absolute -left-6 h-full w-1 bg-primary"></div>
+                    @endif
+                    <svg class="h-5 w-5 mr-3 {{ Route::is('bmi.index') || Route::is('bmi.create') ? 'text-primary relative' : 'text-slate-900' }}"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                    </svg>
+                    <span>BMI</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('profile.edit') }}"
                     class="flex items-center {{ Route::is('profile.edit') ? 'text-primary relative' : 'text-slate-900' }}">
                     @if (Route::is('profile.edit'))
@@ -100,7 +114,8 @@
                             <div class="absolute -left-6 h-full w-1 bg-primary"></div>
                         @endif
                         <svg class="h-5 w-5 mr-3 {{ Route::is('dashboard') ? 'text-primary' : 'text-slate-900' }}"
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
