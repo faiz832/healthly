@@ -991,14 +991,6 @@
             });
         }
 
-        // Function to scroll to top
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
         // Function to toggle visibility of the scroll button
         window.onscroll = function() {
             let scrollToTopBtn = document.getElementById("scrollToTopBtn");
