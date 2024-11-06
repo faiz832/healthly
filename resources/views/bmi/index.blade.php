@@ -10,7 +10,7 @@
                     <h2 class="text-2xl font-semibold">Body Mass Index</h2>
 
                     @if (session('success'))
-                        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)"
+                        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 1000)"
                             x-transition:enter="transition ease-out duration-300"
                             x-transition:enter-start="opacity-0 transform scale-90"
                             x-transition:enter-end="opacity-100 transform scale-100"
@@ -84,14 +84,14 @@
                                             {{ $bmi->category }}
                                         </td>
                                         <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{ $bmi->created_at->format('d-m-Y') }}
+                                            {{ $bmi->created_at->format('d M Y') }}
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
                                         <td colspan="5"
-                                            class="px-4 py-4 whitespace-nowrap text-sm text-center text-gray-500">
-                                            Oops! Kamu belum mengukur BMI sebelumnya
+                                            class="px-4 py-6 whitespace-nowrap text-center w-full text-gray-500">
+                                            Oops! Kamu belum menghitung BMI sebelumnya
                                         </td>
                                     </tr>
                                 @endforelse

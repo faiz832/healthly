@@ -8,11 +8,49 @@
                 <div class="space-y-6">
                     <div class="">
                         <div class="text-2xl font-semibold">Hello {{ Auth::user()->name }}</div>
-                        <h1 class="text-sm text-gray-500">Welcome Back!</h1>
+                        <h1 class="text-sm text-gray-500">Selamat Datang!</h1>
                     </div>
                 </div>
 
-                <!-- Table -->
+                <!-- BMI -->
+                <div class="bg-white mt-4 rounded-lg p-6 shadow border border-gray-200">
+                    <h2 class="font-semibold mb-4">Body Mass Index Kamu</h2>
+
+                    @forelse ($bmis as $bmi)
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-blue-100 p-4 rounded-lg text-center">
+                                <p class="text-sm text-blue-600 font-semibold mb-1">Tinggi</p>
+                                <p class="text-2xl font-bold text-blue-800">{{ $bmi->height }} cm</p>
+                            </div>
+                            <div class="bg-green-100 p-4 rounded-lg text-center">
+                                <p class="text-sm text-green-600 font-semibold mb-1">Berat</p>
+                                <p class="text-2xl font-bold text-green-800">{{ $bmi->weight }} kg</p>
+                            </div>
+                            <div class="bg-purple-100 p-4 rounded-lg text-center">
+                                <p class="text-sm text-purple-600 font-semibold mb-1">BMI</p>
+                                <p class="text-2xl font-bold text-purple-800">{{ number_format($bmi->bmi, 1) }}</p>
+                            </div>
+                            <div class="bg-yellow-100 p-4 rounded-lg text-center">
+                                <p class="text-sm text-yellow-600 font-semibold mb-1">Kategori</p>
+                                <p class="text-xl font-bold text-yellow-800">{{ $bmi->category }}</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <p class="whitespace-nowrap text-sm text-center text-gray-500">Data terakhir
+                                diperbarui pada:
+                                {{ $bmi->created_at->format('d M Y, H:i') }}</p>
+                        </div>
+                    @empty
+                        <div class="text-center py-8">
+                            <p class="text-gray-500">Kamu belum melakukan perhitungan BMI.</p>
+                            <a href="{{ route('bmi.create') }}"
+                                class="mt-4 inline-block px-4 py-2 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Hitung
+                                BMI Sekarang</a>
+                        </div>
+                    @endforelse
+                </div>
+
+                <!-- Table riwayat analisis -->
                 <div class="bg-white mt-4 rounded-lg p-6 shadow border border-gray-200 overflow-auto">
                     <h1 class="font-semibold mb-4">Riwayat Analisis Kamu</h1>
                     <table class="w-full table-auto rounded-lg overflow-hidden shadow">
@@ -55,7 +93,7 @@
                                         {{ $food->analysis }}
                                     </td>
                                     <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
-                                        {{ $food->created_at->format('d-m-Y') }}
+                                        {{ $food->created_at->format('d M Y') }}
                                     </td>
                                     <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
                                         <a href="{{ url('/scan/' . $food->id) }}" class="flex justify-center">
@@ -84,8 +122,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="5"
-                                        class="px-4 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                                    <td colspan="5" class="px-4 py-6 whitespace-nowrap text-center text-gray-500">
                                         Oops! Kamu belum melakukan scan sebelumnya
                                     </td>
                                 </tr>
