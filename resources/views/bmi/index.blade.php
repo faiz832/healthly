@@ -37,27 +37,27 @@
                             <thead class="bg-gray-50">
                                 <tr>
                                     <th
-                                        class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-12">
+                                        class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-12">
                                         No
                                     </th>
                                     <th
-                                        class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Height (cm)
                                     </th>
                                     <th
-                                        class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Weight (kg)
                                     </th>
                                     <th
-                                        class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         BMI
                                     </th>
                                     <th
-                                        class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Category
                                     </th>
                                     <th
-                                        class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Date
                                     </th>
                                 </tr>
@@ -65,32 +65,33 @@
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @forelse($bmis as $bmi)
                                     <tr>
-                                        <td class="px-4 py-4 whitespace-nowrap text-sm">{{ $loop->iteration }}</td>
-                                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <td class="px-4 py-4 text-center whitespace-nowrap text-sm">
+                                            {{ $loop->iteration }}</td>
+                                        <td class="px-4 py-4 text-center whitespace-nowrap text-sm text-gray-900">
                                             {{ $bmi->height }}
                                         </td>
-                                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <td class="px-4 py-4 text-center whitespace-nowrap text-sm text-gray-900">
                                             {{ $bmi->weight }}
                                         </td>
-                                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <td class="px-4 py-4 text-center whitespace-nowrap text-sm text-gray-900">
                                             {{ number_format($bmi->bmi, 2) }}
                                         </td>
                                         <td
-                                            class="px-4 py-4 whitespace-nowrap text-sm font-semibold
+                                            class="px-4 py-4 text-center whitespace-nowrap text-sm font-semibold
                                             @if ($bmi->category == 'Underweight') text-red-500
                                             @elseif ($bmi->category == 'Normal') text-green-500
                                             @elseif ($bmi->category == 'Overweight') text-red-500
                                             @elseif ($bmi->category == 'Obese') text-red-700 @endif">
                                             {{ $bmi->category }}
                                         </td>
-                                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                                        <td class="px-4 py-4 text-center whitespace-nowrap text-sm text-gray-900">
                                             {{ $bmi->created_at->format('d M Y') }}
                                         </td>
                                     </tr>
                                 @empty
                                     <tr>
                                         <td colspan="5"
-                                            class="px-4 py-6 whitespace-nowrap text-center w-full text-gray-500">
+                                            class="px-4 py-6 whitespace-nowrap text-center text-gray-500">
                                             Oops! Kamu belum menghitung BMI sebelumnya
                                         </td>
                                     </tr>

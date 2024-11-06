@@ -13,39 +13,53 @@
                 </div>
 
                 <!-- BMI -->
-                <div class="bg-white mt-4 rounded-lg p-6 shadow border border-gray-200">
-                    <h2 class="font-semibold mb-4">Body Mass Index Kamu</h2>
+                <div class="bg-primary/70 mt-4 rounded-lg p-6 shadow border border-gray-200">
+                    <h2 class="font-semibold text-white">Body Mass Index Kamu</h2>
 
                     @forelse ($bmis as $bmi)
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            <div class="bg-blue-100 p-4 rounded-lg text-center">
-                                <p class="text-sm text-blue-600 font-semibold mb-1">Tinggi</p>
-                                <p class="text-2xl font-bold text-blue-800">{{ $bmi->height }} cm</p>
+                        <div class="mt-4 grid grid-cols-2 md:grid-cols-5 gap-4">
+                            <div class="">
+                                <p class="text-sm font-semibold mb-2 text-white">Tinggi</p>
+                                <div class="bg-primary p-4 rounded-lg">
+                                    <p class="font-bold text-white">{{ $bmi->height }} cm</p>
+                                </div>
                             </div>
-                            <div class="bg-green-100 p-4 rounded-lg text-center">
-                                <p class="text-sm text-green-600 font-semibold mb-1">Berat</p>
-                                <p class="text-2xl font-bold text-green-800">{{ $bmi->weight }} kg</p>
+                            <div class="">
+                                <p class="text-sm font-semibold mb-2 text-white">Berat</p>
+                                <div class="bg-primary p-4 rounded-lg">
+                                    <p class="font-bold text-white">{{ $bmi->weight }} kg</p>
+                                </div>
                             </div>
-                            <div class="bg-purple-100 p-4 rounded-lg text-center">
-                                <p class="text-sm text-purple-600 font-semibold mb-1">BMI</p>
-                                <p class="text-2xl font-bold text-purple-800">{{ number_format($bmi->bmi, 1) }}</p>
+                            <div class="">
+                                <p class="text-sm font-semibold mb-2 text-white">BMI</p>
+                                <div class="bg-primary p-4 rounded-lg">
+                                    <p class="font-bold text-white">{{ number_format($bmi->bmi, 1) }}</p>
+                                </div>
                             </div>
-                            <div class="bg-yellow-100 p-4 rounded-lg text-center">
-                                <p class="text-sm text-yellow-600 font-semibold mb-1">Kategori</p>
-                                <p class="text-xl font-bold text-yellow-800">{{ $bmi->category }}</p>
+                            <div class="">
+                                <p class="text-sm font-semibold mb-2 text-white">Kategori</p>
+                                <div class="bg-primary p-4 rounded-lg">
+                                    <p class="font-bold text-white">{{ $bmi->category }}</p>
+                                </div>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="{{ route('bmi.create') }}"
+                                    class="inline-block w-full text-center p-4 rounded-lg text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Hitung
+                                    BMI
+                                </a>
                             </div>
                         </div>
-                        <div class="mt-6 text-center">
-                            <p class="whitespace-nowrap text-sm text-center text-gray-500">Data terakhir
+                        <div class="mt-6">
+                            <p class="whitespace-nowrap text-sm text-white">Data terakhir
                                 diperbarui pada:
                                 {{ $bmi->created_at->format('d M Y, H:i') }}</p>
                         </div>
                     @empty
                         <div class="text-center py-8">
-                            <p class="text-gray-500">Kamu belum melakukan perhitungan BMI.</p>
+                            <p class="text-white">Kamu belum melakukan perhitungan BMI.</p>
                             <a href="{{ route('bmi.create') }}"
                                 class="mt-4 inline-block px-4 py-2 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Hitung
-                                BMI Sekarang</a>
+                                BMI</a>
                         </div>
                     @endforelse
                 </div>
@@ -57,23 +71,23 @@
                         <thead class="bg-gray-50">
                             <tr>
                                 <th
-                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-12">
+                                    class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-12">
                                     No
                                 </th>
                                 <th
-                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Image
                                 </th>
                                 <th
-                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Analysis
                                 </th>
                                 <th
-                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Date
                                 </th>
                                 <th
-                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    class="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Action
                                 </th>
                             </tr>
@@ -81,21 +95,22 @@
                         <tbody class="bg-white divide-y divide-gray-200">
                             @forelse ($foods as $food)
                                 <tr>
-                                    <td class="px-4 py-4 whitespace-nowrap text-sm">{{ $loop->iteration }}</td>
-                                    <td class="px-4 py-4 whitespace-nowrap">
+                                    <td class="px-4 py-4 text-center whitespace-nowrap text-sm">{{ $loop->iteration }}
+                                    </td>
+                                    <td class="px-4 py-4 text-center whitespace-nowrap">
                                         <div class="flex items-center justify-center">
                                             <img class="h-10 w-10 object-cover rounded"
                                                 src="{{ Storage::url($food->foodImage) }}" alt="makanan kamu"
                                                 loading="lazy" />
                                         </div>
                                     </td>
-                                    <td class="px-4 py-4 whitespace-normal text-sm text-gray-900">
+                                    <td class="px-4 py-4 text-center whitespace-normal text-sm text-gray-900">
                                         {{ $food->analysis }}
                                     </td>
-                                    <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <td class="px-4 py-4 text-center whitespace-nowrap text-sm text-gray-900">
                                         {{ $food->created_at->format('d M Y') }}
                                     </td>
-                                    <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                                    <td class="px-4 py-4 text-center whitespace-nowrap text-sm text-gray-900">
                                         <a href="{{ url('/scan/' . $food->id) }}" class="flex justify-center">
                                             <svg class="w-6 h-6" viewBox="0 -4 20 20" version="1.1"
                                                 xmlns="http://www.w3.org/2000/svg"

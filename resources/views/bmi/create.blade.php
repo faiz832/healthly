@@ -19,14 +19,14 @@
                                 <div>
                                     <x-input-label for="height" :value="__('Height (cm)')" />
                                     <x-text-input id="height" name="height" type="number" class="mt-1 block w-full"
-                                        :value="old('height')" required />
+                                        :value="old('height')" required autofocus />
                                     <x-input-error class="mt-2" :messages="$errors->get('height')" />
                                 </div>
 
                                 <div>
                                     <x-input-label for="weight" :value="__('Weight (kg)')" />
                                     <x-text-input id="weight" name="weight" type="number" class="mt-1 block w-full"
-                                        :value="old('weight')" required autofocus />
+                                        :value="old('weight')" required />
                                     <x-input-error class="mt-2" :messages="$errors->get('weight')" />
                                 </div>
 

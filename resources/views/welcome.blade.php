@@ -494,13 +494,13 @@
                         <video
                             class="hidden md:flex h-full w-full select-none rounded-t-2xl object-cover object-left-top"
                             autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
-                            poster="https://bytescale.mobbin.com/FW25bBB/image/assets/videos/lp_flow_video_demo_v1.mp4?t=0">
+                            poster="{{ asset('assets/images/poster.png') }}">
                             <source type="video/mp4" src="{{ asset('assets/videos/demo-desktop.mp4') }}">
                         </video>
                         <video
                             class="flex md:hidden h-full w-full select-none rounded-t-2xl object-cover object-left-top"
                             autoplay muted loop playsinline disablepictureinpicture disableremoteplayback
-                            poster="https://bytescale.mobbin.com/FW25bBB/image/assets/videos/lp_flow_video_demo_v1.mp4?t=0">
+                            poster="{{ asset('assets/images/poster.png') }}">
                             <source type="video/mp4" src="{{ asset('assets/videos/demo-mobile.mp4') }}">
                         </video>
                     </div>
