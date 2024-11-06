@@ -559,9 +559,22 @@
                 </div>
                 <div class="bottom-4 md:bottom-56 lg:bottom-44 arrows">
                     <button id="prev"
-                        class="w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Prev</button>
+                        class="w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
+                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 17L13 12L18 7M11 17L6 12L11 7" stroke="#fff" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                     <button id="next"
-                        class="w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">Next</button>
+                        class="w-max flex justify-center items-center h-12 px-6 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark transition-all duration-500 ease-in-out btn">
+                        <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                        <svg class="h-6 w-6 transform rotate-180" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 17L13 12L18 7M11 17L6 12L11 7" stroke="#fff" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
@@ -648,7 +661,7 @@
 
     <!-- Testimonials Section -->
     <section class="max-w-[1280px] mx-auto p-4 py-6 lg:py-8">
-        <h1 class="text-5xl font-bold text-center">What They Say</h1>
+        <h1 class="text-5xl font-bold text-center">Pengalaman dari Mereka</h1>
         <div class="relative flex flex-col flex-wrap mt-24 gap-8">
             <div class="w-full max-w-[1280px] mb-12 columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-8">
                 <div class="flex h-fit w-full flex-col rounded-3xl p-5 break-inside-avoid border border-gray-300 mb-8">
@@ -872,7 +885,7 @@
 
     <!-- Up Button -->
     <div id="scrollToTopBtn" onclick="scrollToTop()"
-        class="z-40 fixed bottom-7 right-7 cursor-pointer opacity-0 transform translate-y-10 transition-all duration-300 rounded-lg p-4 bg-primaryDark text-white shadow-lg hover:-translate-y-2">
+        class="z-40 fixed bottom-7 right-7 cursor-pointer flex justify-center items-center p-4 rounded-md text-white font-bold bg-gradient-to-r from-primaryDark via-primary to-primaryDark btn opacity-0 transform translate-y-10 transition-all duration-500 ease-in-out shadow-lg hover:-translate-y-2">
         <!-- SVG Icon for Up Arrow -->
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
             stroke="currentColor" class="w-6 h-6">
