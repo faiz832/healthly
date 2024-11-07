@@ -44,7 +44,7 @@
                                 [
                                     'title' => 'Data Collection',
                                     'content' =>
-                                        'Kami mengumpulkan informasi pribadi seperti nama, alamat email, dan detail pembayaran saat kamu mendaftar, berlangganan, atau menggunakan layanan kami. Informasi ini penting untuk manajemen akun dan meningkatkan pengalamanmu.',
+                                        'Kami mengumpulkan informasi pribadi seperti nama, alamat email, dan detail pembayaran saat kamu mendaftar, atau menggunakan layanan kami. Informasi ini penting untuk manajemen akun dan meningkatkan pengalamanmu.',
                                 ],
                                 [
                                     'title' => 'Use of Data',
@@ -54,7 +54,7 @@
                                 [
                                     'title' => 'Data Sharing',
                                     'content' =>
-                                        'Kami tidak membagikan informasi pribadi kamu dengan pihak ketiga, kecuali jika diwajibkan oleh hukum atau untuk menyediakan layanan penting (misalnya, pemrosesan pembayaran).',
+                                        'Kami tidak membagikan informasi pribadi kamu dengan pihak ketiga, kecuali jika diwajibkan oleh hukum atau untuk menyediakan layanan penting.',
                                 ],
                                 [
                                     'title' => 'Cookies',

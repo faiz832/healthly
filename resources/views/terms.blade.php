@@ -57,11 +57,6 @@
                                         'Kamu diharuskan memberikan informasi yang akurat dan terkini saat mendaftarkan akun. Kamu bertanggung jawab untuk menjaga keamanan akun dan kata sandimu.',
                                 ],
                                 [
-                                    'title' => 'Content Ownership',
-                                    'content' =>
-                                        'Semua konten, kursus, dan materi yang disediakan di platform dimiliki oleh Healthly AI atau pemberi lisensi kami. Reproduksi atau distribusi tanpa izin dilarang.',
-                                ],
-                                [
                                     'title' => 'Modification of Terms',
                                     'content' =>
                                         'Healthly AI berhak untuk memperbarui atau mengubah syarat-syarat ini kapan saja. Perubahan akan berlaku setelah diposting, dan penggunaan platform secara terus-menerus berarti kamu menerima syarat-syarat yang diperbarui.',
