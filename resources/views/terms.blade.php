@@ -57,16 +57,6 @@
                                         'Kamu diharuskan memberikan informasi yang akurat dan terkini saat mendaftarkan akun. Kamu bertanggung jawab untuk menjaga keamanan akun dan kata sandimu.',
                                 ],
                                 [
-                                    'title' => 'Subscription Plans',
-                                    'content' =>
-                                        'Akses ke fitur premium memerlukan langganan. Harga dan manfaat dijelaskan dengan jelas saat pendaftaran. Langganan akan diperpanjang otomatis kecuali dibatalkan sebelum tanggal perpanjangan.',
-                                ],
-                                [
-                                    'title' => 'Refunds and Cancellations',
-                                    'content' =>
-                                        'Kami tidak menyediakan pengembalian dana untuk pembayaran langganan. Kamu dapat membatalkan langganan kapan saja, dan langganan akan tetap aktif hingga akhir siklus penagihan.',
-                                ],
-                                [
                                     'title' => 'Content Ownership',
                                     'content' =>
                                         'Semua konten, kursus, dan materi yang disediakan di platform dimiliki oleh Healthly AI atau pemberi lisensi kami. Reproduksi atau distribusi tanpa izin dilarang.',

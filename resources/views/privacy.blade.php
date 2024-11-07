@@ -49,7 +49,7 @@
                                 [
                                     'title' => 'Use of Data',
                                     'content' =>
-                                        'Datamu digunakan untuk menyediakan dan meningkatkan layanan yang kamu minta, termasuk akses kursus, optimalisasi CV, dan rekomendasi yang dipersonalisasi.',
+                                        'Datamu digunakan untuk menyediakan dan meningkatkan layanan yang kamu minta.',
                                 ],
                                 [
                                     'title' => 'Data Sharing',
