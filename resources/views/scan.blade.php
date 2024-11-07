@@ -141,18 +141,18 @@
                                     x-transition:leave="transition ease-in duration-75"
                                     x-transition:leave-start="transform opacity-100 translate-x-0"
                                     x-transition:leave-end="transform opacity-0 -translate-x-full" style="display: none;"
-                                    class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
+                                    class="fixed inset-0 h-full bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
                                     <!-- Modal Content -->
-                                    <div class="bg-white flex flex-col items-center rounded-lg shadow-lg w-[400px] py-12"
+                                    <div class="bg-white flex flex-col items-center rounded-lg shadow-lg mx-auto w-11/12 md:w-[345px] p-12 md:py-12 md:px-0"
                                         @click.away="open = false">
                                         <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt=""
                                             class="w-12 h-12">
-                                        <div class="w-[70%] text-center my-6">
+                                        <div class="w-full md:w-[70%] text-center my-6">
                                             <h1 class="text-2xl font-bold">Selamat Datang!
                                             </h1>
                                             <p class="text-gray-600">Silahkan login terlebih dahulu ya</p>
                                         </div>
-                                        <div class="mb-4 w-[70%]">
+                                        <div class="mb-4 w-full md:w-[70%]">
                                             <a href="{{ route('auth.google') }}"
                                                 class="flex items-center justify-center gap-2 px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-300">
                                                 <svg class="w-5 h-5" viewBox="0 0 24 24"
@@ -173,7 +173,7 @@
                                                 Continue with Google
                                             </a>
                                         </div>
-                                        <div class="flex items-center w-[70%]">
+                                        <div class="flex items-center w-full md:w-[70%]">
                                             <div class="grow">
                                                 <hr>
                                             </div>
@@ -184,7 +184,7 @@
                                                 <hr>
                                             </div>
                                         </div>
-                                        <div class="z-10 flex flex-col items-center gap-4 mt-4 w-[70%]">
+                                        <div class="z-10 flex flex-col items-center gap-4 mt-4 w-full md:w-[70%]">
                                             <a href="{{ url('/login') }}"
                                                 class="w-full justify-center py-2 px-4 border border-primary rounded-md shadow-sm text-sm font-medium text-primary hover:text-white hover:bg-primaryDark transition duration-300">
                                                 Log in

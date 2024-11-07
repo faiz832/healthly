@@ -279,6 +279,11 @@
                 height: 600px;
             }
 
+            .carousel::before {
+                width: 400px;
+                height: 200px;
+            }
+
             .carousel .list .item {
                 width: 100%;
                 font-size: 10px;
@@ -487,10 +492,10 @@
             </div>
 
             <!-- Background Decoration -->
-            <div class="absolute top-0 -left-40 z-[-1]">
+            <div class="absolute top-44 -left-40 z-[-1]">
                 <img src="{{ asset('assets/images/decoration-1.png') }}" alt="" class="w-[354px] h-[363px]">
             </div>
-            <div class="absolute bottom-0 -right-40 z-[-1]">
+            <div class="absolute bottom-16 -right-40 z-[-1]">
                 <img src="{{ asset('assets/images/decoration-2.png') }}" alt="" class="w-[354px] h-[240px]">
             </div>
 
