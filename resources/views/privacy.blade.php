@@ -44,7 +44,7 @@
                                 [
                                     'title' => 'Data Collection',
                                     'content' =>
-                                        'Kami mengumpulkan informasi pribadi seperti nama, alamat email, dan detail pembayaran saat kamu mendaftar, atau menggunakan layanan kami. Informasi ini penting untuk manajemen akun dan meningkatkan pengalamanmu.',
+                                        'Kami mengumpulkan informasi pribadi seperti nama, dan alamat email, atau menggunakan layanan kami. Informasi ini penting untuk manajemen akun dan meningkatkan pengalamanmu.',
                                 ],
                                 [
                                     'title' => 'Use of Data',
