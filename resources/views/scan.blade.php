@@ -111,9 +111,10 @@
                                 </form>
                             </div>
                         @else
-                            <div x-data="{ open: false }"
+                            <div
                                 class="relative w-full flex flex-col justify-center mt-4 px-6 py-12 border-2 border-dashed border-primary rounded-lg text-center transition-all duration-300 ease-in-out">
-                                <button @click="open = !open" class="flex flex-col items-center py-4">
+                                <button x-data="" x-on:click.prevent="$dispatch('open-modal', 'login-first')"
+                                    class="flex flex-col items-center py-4">
                                     <svg width="37" height="36" viewBox="0 0 37 36" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g clip-path="url(#clip0_1386_165)">
@@ -135,13 +136,13 @@
                                 <p id="fileName" class="text-sm text-gray-500 mb-4"></p>
 
                                 <!-- Modal Background -->
-                                <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                {{-- <div x-show="open" x-transition:enter="transition ease-out duration-200"
                                     x-transition:enter-start="transform opacity-0 -translate-x-full"
                                     x-transition:enter-end="transform opacity-100 translate-x-0"
                                     x-transition:leave="transition ease-in duration-75"
                                     x-transition:leave-start="transform opacity-100 translate-x-0"
                                     x-transition:leave-end="transform opacity-0 -translate-x-full" style="display: none;"
-                                    class="fixed inset-0 h-full bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
+                                    class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
                                     <!-- Modal Content -->
                                     <div class="bg-white flex flex-col items-center rounded-lg shadow-lg mx-auto w-11/12 md:w-[345px] p-12 md:py-12 md:px-0"
                                         @click.away="open = false">
@@ -195,7 +196,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         @endauth
                     @endif
@@ -256,6 +257,59 @@
                 </div>
             </div>
         </section>
+
+        <x-login-modal name="login-first" focusable>
+            <div
+                class="bg-white flex flex-col items-center rounded-lg shadow-lg w-full md:w-[345px] p-12 md:py-12 md:px-0">
+                <img src="{{ asset('assets/icons/healthly-dark.png') }}" alt="" class="w-12 h-12">
+                <div class="w-full md:w-[70%] text-center my-6">
+                    <h1 class="text-2xl font-bold">Selamat Datang!
+                    </h1>
+                    <p class="text-gray-600">Silahkan login terlebih dahulu ya</p>
+                </div>
+                <div class="mb-4 w-full md:w-[70%]">
+                    <a href="{{ route('auth.google') }}"
+                        class="flex items-center justify-center gap-2 px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-100 transition duration-300">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                        Continue with Google
+                    </a>
+                </div>
+                <div class="flex items-center w-full md:w-[70%]">
+                    <div class="grow">
+                        <hr>
+                    </div>
+                    <div class="text-center px-3">
+                        or
+                    </div>
+                    <div class="grow">
+                        <hr>
+                    </div>
+                </div>
+                <div class="z-10 flex flex-col items-center gap-4 mt-4 w-full md:w-[70%]">
+                    <a href="{{ url('/login') }}"
+                        class="w-full justify-center py-2 px-4 border border-primary rounded-md shadow-sm text-sm font-medium text-primary hover:text-white hover:bg-primaryDark transition duration-300">
+                        Log in
+                    </a>
+                    <a href="{{ url('/register') }}"
+                        class="w-full justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primaryDark transition duration-300">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+        </x-login-modal>
 
         <!-- Footer -->
         @include('layouts.footer')
