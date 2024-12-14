@@ -21,7 +21,7 @@ class ProfileController extends Controller
             'user' => $request->user(),
         ]);
     }
-    
+
     public function update(Request $request)
     {
         DB::transaction(function () use ($request) {
@@ -51,9 +51,6 @@ class ProfileController extends Controller
         return redirect()->route('profile.edit')->with('status', 'profile-updated');
     }
 
-    /**
-     * Delete the user's account.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         $request->validateWithBag('userDeletion', [
