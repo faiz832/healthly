@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    // public function edit(Request $request): View
-    // {
-    //     return view('profile.edit', [
-    //         'user' => $request->user(),
-    //     ]);
-    // }
+    public function edit(Request $request): View
+    {
+        return view('profile.edit', [
+            'user' => $request->user(),
+        ]);
+    }
 
     public function update(Request $request)
     {
